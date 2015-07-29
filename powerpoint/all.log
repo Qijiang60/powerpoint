@@ -1,0 +1,80 @@
+2015-07-29 09:56:11,870 [Thread-1:4564754432] [django.db.backends:79] [DEBUG]- (0.004) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'volf692ua6v2jb6lwevxff76m61rna5p'  AND `django_session`.`expire_date` > '2015-07-29 09:56:11' ); args=('volf692ua6v2jb6lwevxff76m61rna5p', u'2015-07-29 09:56:11')
+2015-07-29 09:56:11,945 [Thread-1:4564754432] [django.request:226] [ERROR]- Internal Server Error: /ppt/index/firstPage
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/django/views/generic/base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/csf/Work/cheshengfu/powerpoint/powerpoint/ppt/views.py", line 12, in get
+    logger.info(token)
+NameError: global name 'logger' is not defined
+2015-07-29 09:57:20,568 [Thread-1:4503359488] [django.db.backends:79] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'volf692ua6v2jb6lwevxff76m61rna5p'  AND `django_session`.`expire_date` > '2015-07-29 09:57:20' ); args=('volf692ua6v2jb6lwevxff76m61rna5p', u'2015-07-29 09:57:20')
+2015-07-29 09:57:20,615 [Thread-1:4503359488] [powerpoint:12] [INFO]- firstPage
+2015-07-29 09:57:20,627 [Thread-1:4503359488] [django.db.backends:79] [DEBUG]- (0.010) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage'  LIMIT 21; args=(u'firstPage',)
+2015-07-29 09:57:20,628 [Thread-1:4503359488] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage'  LIMIT 21; args=(u'firstPage',)
+2015-07-29 09:57:20,616 [Thread-1:4503359488] [powerpoint:14] [INFO]- [{'title': u'firstPage'}]
+2015-07-29 09:57:20,630 [Thread-1:4503359488] [django.db.backends:79] [DEBUG]- (0.000) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage'  LIMIT 21; args=(u'firstPage',)
+2015-07-29 09:57:20,632 [Thread-1:4503359488] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage' ; args=(u'firstPage',)
+2015-07-29 09:58:35,983 [Thread-3:4503359488] [django.db.backends:79] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'volf692ua6v2jb6lwevxff76m61rna5p'  AND `django_session`.`expire_date` > '2015-07-29 09:58:35' ); args=('volf692ua6v2jb6lwevxff76m61rna5p', u'2015-07-29 09:58:35')
+2015-07-29 09:58:35,984 [Thread-3:4503359488] [powerpoint:12] [INFO]- firstPage
+2015-07-29 09:58:35,990 [Thread-3:4503359488] [django.db.backends:79] [DEBUG]- (0.003) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage'  LIMIT 21; args=(u'firstPage',)
+2015-07-29 09:58:35,991 [Thread-3:4503359488] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage'  LIMIT 21; args=(u'firstPage',)
+2015-07-29 09:58:35,986 [Thread-3:4503359488] [powerpoint:14] [INFO]- [{'title': u'firstPage'}]
+2015-07-29 09:58:35,993 [Thread-3:4503359488] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage'  LIMIT 21; args=(u'firstPage',)
+2015-07-29 09:58:35,995 [Thread-3:4503359488] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage' ; args=(u'firstPage',)
+2015-07-29 10:00:55,375 [Thread-1:4426817536] [django.db.backends:79] [DEBUG]- (0.003) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'volf692ua6v2jb6lwevxff76m61rna5p'  AND `django_session`.`expire_date` > '2015-07-29 10:00:55' ); args=('volf692ua6v2jb6lwevxff76m61rna5p', u'2015-07-29 10:00:55')
+2015-07-29 10:00:55,438 [Thread-1:4426817536] [powerpoint:12] [INFO]- firstPage
+2015-07-29 10:00:55,441 [Thread-1:4426817536] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage' ; args=(u'firstPage',)
+2015-07-29 10:00:55,442 [Thread-1:4426817536] [django.request:226] [ERROR]- Internal Server Error: /ppt/index/firstPage
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/django/views/generic/base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/csf/Work/cheshengfu/powerpoint/powerpoint/ppt/views.py", line 15, in get
+    context.update(infos)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+2015-07-29 10:06:43,190 [Thread-1:4442710016] [django.db.backends:79] [DEBUG]- (0.001) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'volf692ua6v2jb6lwevxff76m61rna5p'  AND `django_session`.`expire_date` > '2015-07-29 10:06:43' ); args=('volf692ua6v2jb6lwevxff76m61rna5p', u'2015-07-29 10:06:43')
+2015-07-29 10:06:43,228 [Thread-1:4442710016] [powerpoint:12] [INFO]- firstPage
+2015-07-29 10:06:43,229 [Thread-1:4442710016] [powerpoint:16] [INFO]- infos
+2015-07-29 10:06:43,230 [Thread-1:4442710016] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage'  LIMIT 21; args=(u'firstPage',)
+2015-07-29 10:06:43,231 [Thread-1:4442710016] [django.db.backends:79] [DEBUG]- (0.000) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage'  LIMIT 21; args=(u'firstPage',)
+2015-07-29 10:06:43,229 [Thread-1:4442710016] [powerpoint:17] [INFO]- [{'title': u'firstPage'}]
+2015-07-29 10:06:43,233 [Thread-1:4442710016] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage'  LIMIT 21; args=(u'firstPage',)
+2015-07-29 10:15:32,065 [Thread-1:4352950272] [django.db.backends:79] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'volf692ua6v2jb6lwevxff76m61rna5p'  AND `django_session`.`expire_date` > '2015-07-29 10:15:32' ); args=('volf692ua6v2jb6lwevxff76m61rna5p', u'2015-07-29 10:15:32')
+2015-07-29 10:15:32,118 [Thread-1:4352950272] [powerpoint:13] [INFO]- firstPage
+2015-07-29 10:15:32,120 [Thread-1:4352950272] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage' ; args=(u'firstPage',)
+2015-07-29 10:15:32,120 [Thread-1:4352950272] [django.request:226] [ERROR]- Internal Server Error: /ppt/index/firstPage
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/django/views/generic/base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/csf/Work/cheshengfu/powerpoint/powerpoint/ppt/views.py", line 20, in get
+    context.update(infos)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+2015-07-29 10:36:30,353 [Thread-1:4435603456] [django.db.backends:79] [DEBUG]- (0.007) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'volf692ua6v2jb6lwevxff76m61rna5p'  AND `django_session`.`expire_date` > '2015-07-29 10:36:30' ); args=('volf692ua6v2jb6lwevxff76m61rna5p', u'2015-07-29 10:36:30')
+2015-07-29 10:36:30,416 [Thread-1:4435603456] [powerpoint:13] [INFO]- firstPage
+2015-07-29 10:36:30,418 [Thread-1:4435603456] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage' ; args=(u'firstPage',)
+2015-07-29 10:36:30,419 [Thread-1:4435603456] [django.request:226] [ERROR]- Internal Server Error: /ppt/index/firstPage
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 114, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python2.7/site-packages/django/views/generic/base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python2.7/site-packages/django/views/generic/base.py", line 87, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/csf/Work/cheshengfu/powerpoint/powerpoint/ppt/views.py", line 20, in get
+    context.update(infos)
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+2015-07-29 10:37:02,296 [Thread-1:4503891968] [django.db.backends:79] [DEBUG]- (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`session_key` = 'volf692ua6v2jb6lwevxff76m61rna5p'  AND `django_session`.`expire_date` > '2015-07-29 10:37:02' ); args=('volf692ua6v2jb6lwevxff76m61rna5p', u'2015-07-29 10:37:02')
+2015-07-29 10:37:02,341 [Thread-1:4503891968] [powerpoint:13] [INFO]- firstPage
+2015-07-29 10:37:02,344 [Thread-1:4503891968] [django.db.backends:79] [DEBUG]- (0.001) SELECT `t_powerpoint_workdata`.`title` FROM `t_powerpoint_workdata` WHERE `t_powerpoint_workdata`.`token` = 'firstPage' ; args=(u'firstPage',)
+2015-07-29 10:37:02,345 [Thread-1:4503891968] [powerpoint:21] [INFO]- infos
+2015-07-29 10:37:02,346 [Thread-1:4503891968] [powerpoint:22] [INFO]- [{'title': u'firstPage'}]

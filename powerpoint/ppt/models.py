@@ -12,4 +12,4 @@ class PPTWorkData(models.Model):
         db_table = 't_powerpoint_workdata'
 
     def __unicode__(self):
-        return self.title
+        return self.token

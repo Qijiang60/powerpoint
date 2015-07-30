@@ -89,8 +89,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-       os.path.join(SRC_FOLDER,'../static/'),
-        )
+       os.path.join(os.path.split(SRC_FOLDER)[0],'static/'),
+)
 
 LOGGING_FILE = 'log.log'
 

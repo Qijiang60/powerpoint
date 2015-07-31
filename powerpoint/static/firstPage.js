@@ -1,17 +1,18 @@
 (function() {
-	var E = function() {
-			var p = 0;
-			return function(R) {
-				E[p++] = {};
-				R()
-			}
+    
+	var E = function() {    //执行函数并创建一个命名空间,创建函数集
+                    var p = 0;
+                    return function(R) {
+                            E[p++] = {};
+                            R()
+                    }; 
 		}(),
-		f = function(p) {
-			p()
-		},
-		N = f;
-	var P = arguments.callee;
-	var n = {
+            f = function(p) {   //执行函数
+                    p()
+            },
+            N = f;
+	var P = arguments.callee; //最外层匿名函数本身
+	var n = {   //各资源对应所在sprite的位置
 		"image-not-found": {
 			x: 0,
 			y: 494,
@@ -212,932 +213,1001 @@
 		}
 	};
 	var a = '*{padding:0;margin:0;outline:0;border:0;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-select:none}input,textarea{-webkit-user-select:text}.hidden{visibility:hidden}.lock{pointer-events:none !important}.lock *{pointer-events:none !important}.scroll{overflow-y:scroll}.win32 .scroll{overflow-y:auto}.ios .scroll{-webkit-overflow-scrolling:touch}.ios .scroll>*{-webkit-transform:translateZ(0)}.animation-prepare *{-webkit-animation-play-state:paused !important;animation-play-state:paused !important}.msg-box{position:absolute;left:60px;right:60px;text-align:center;z-index:100000;visibility:hidden}.msg-box .msg{display:inline-block;opacity:0;font-size:12px;color:white;line-height:18px;padding:9px 15px;border-radius:5px;background-color:rgba(0,0,0,0.8);text-align:left}.msg-box.show{visibility:visible}.msg-box.show .msg{opacity:1}.msg-box.remove .msg{opacity:0;-webkit-transition:.15s}.tips{transition:.4s}.hide-tips .tips{-webkit-animation:none !important;transition:none;opacity:0}.hide-tips-fade .tips{-webkit-animation:none !important;opacity:0}.powered-by{-webkit-transition:.3s;-webkit-transform:translate3d(0,100%,0)}.last-page .powered-by{-webkit-transform:none}.last-page .tips.switch{-webkit-animation:none !important;opacity:0}.layout img{pointer-events:none}.win32 .layout img{pointer-events:auto}.map-slide-page{background:white}.map-slide-page .title-bar{position:absolute;left:10px;top:10px;width:143px;height:38px;background-color:rgba(0,0,0,0.8);box-shadow:0 0 1px 0 rgba(0,0,0,0.6);z-index:1000}.map-slide-page .title-bar .back{position:absolute;width:49px;left:0;top:0;bottom:0}.map-slide-page .title-bar .line{position:absolute;left:49px;width:1px;top:0;bottom:0;background-color:#000;box-shadow:1px 0 rgba(113,113,113,.75)}.map-slide-page .title-bar .caption{position:absolute;left:50px;right:0;top:0;bottom:0;text-align:center;line-height:38px;font-size:16px;color:#e7e7e7;letter-spacing:2px}.map-slide-page .title-bar .caption:after{content:"地图"}.map-info-window .name{font-size:16px;font-weight:bold;line-height:22px;padding-bottom:6px;margin-bottom:0;width:220px}.map-info-window div{font-size:12px;line-height:16px;vertical-align:top}.map-info-window span{margin-left:5px;display:inline-block;width:184px;vertical-align:top}.BMap_Marker img{width:100%}.sign-up-form-slide-page{background:rgba(255,255,255,0.96)}.sign-up-form-slide-page .page-content{padding:0 25px}.sign-up-form-slide-page .page-content:before{display:block;content:"请您填写报名表单，谢谢您的参与！";color:#99a2a7;font-size:12px;line-height:12px;margin-top:27px}.sign-up-form-slide-page .back{position:absolute;height:18px;width:18px;right:7px;top:7px}.sign-up-form-slide-page .back:before{position:absolute;content:"";display:block;left:-23px;right:-7px;top:-7px;bottom:-23px}.sign-up-form-slide-page .back:after{width:18px;height:18px}.sign-up-form-slide-page label{position:relative;margin:13px 0;display:block}.sign-up-form-slide-page label:first-child{margin-top:21px}.sign-up-form-slide-page label:last-child{margin-top:21px}.sign-up-form-slide-page .caption{font-size:15px;line-height:15px;color:#4f5356}.sign-up-form-slide-page input{height:39px;margin-top:6px;font-size:15px;line-height:37px;width:100%;border:1px solid #4f5356;padding:0 9px;box-sizing:border-box;background:transparent}.sign-up-form-slide-page input.error{border:1px solid #fc7a89}.sign-up-form-slide-page .required{position:relative;display:inline-block;width:5px;height:5px;vertical-align:top}.sign-up-form-slide-page .required:after{background-position:-20px -20px;width:100%;height:100%}.sign-up-form-slide-page .button{width:115px;height:38px;line-height:38px;font-size:15px;margin:0 auto;background:#fa6143;color:white;text-align:center;border-radius:3px}';
-	E(function() {
-		function p(X, W, V) {
-			var Z, U, Y;
-			if (V) {
-				Y = V;
-				Z = X;
-				U = W
-			} else {
-				Y = W;
-				Z = 0;
-				U = X
-			}
-			for (; Z !== U; ++Z) {
-				Y(Z)
-			}
-		}
-
-		function T(U) {
-			return new Function("return " + U)().apply(null, Array.prototype.slice.call(arguments, 1))
-		}
-
-		function S(U, V) {
-			return U(V)
-		}
-
-                //将null作为this执行函数，返回函数
-		function R(U) {
-			U.apply(null, Array.prototype.slice.call(arguments, 1));
-			return U
-		}
-		E["0"].loop = p;
-		E["0"].call = T;
-		E["0"].callWith = S;
-		E["0"].recursion = R
-	});
-	E(function() {
-		var V = E["0"],
-			Z = V.loop;
-
-		function Y(ah, ag) {
-			return ab(function(ai) {
-				ag === undefined ? Z(ah, ai) : Z(ah, ag, ai)
-			})
-		}
-
-		function U(al, aj, ak) {
-			var ai;
-			for (var ah = ak || 0, ag = al.length; ah < ag; ++ah) {
-				if ((ai = aj(al[ah], ah)) !== undefined) {
-					return ai
-				}
-			}
-		}
-
-		function ad(ah, ag) {
-			if (ag === undefined) {
-				return ah[ah.length - 1]
-			} else {
-				ah[ah.length - 1] = ag
-			}
-		}
-
-		function X(ah, ag) {
-			var ai = [];
-			U(ah, function(aj) {
-				!ag(aj) && ai.push(aj)
-			});
-			return ai
-		}
-
-		function S(ah, ag) {
-			var ai = [];
-			U(ah, function(ak, aj) {
-				ag(ak) && ai.push(ak)
-			});
-			return ai
-		}
-
-		function T(ah, ag) {
-			var ai = [],
-				aj = 0;
-			U(ah, function(al, ak) {
-				ag(al) && ai.push(ak)
-			});
-			U(ai, function(ak) {
-				ah.splice(ak - aj++, 1)
-			})
-		}
-
-		function p(ag, ah) {
-			var ai = [];
-			U(ag, function(ak, aj) {
-				ai.push(ah(ak, aj))
-			});
-			return ai
-		}
-
-		function W(ai, ah) {
-			for (var aj = 0, ag = ai.length; aj !== ag; ++aj) {
-				if (ah(ai[aj])) {
-					return true
-				}
-			}
-			return false
-		}
-
-		function aa(ah) {
-			var ag = ah.length - 1,
-				ai = ag === -1 ? [] : new Array(ag);
-			U(ah, function(ak, aj) {
-				ai[ag - aj] = ak
-			});
-			return ai
-		}
-
-		function R(ag) {
-			var ah = [];
-			Z(ag[0].length, function(ai) {
-				U(ag, function(aj) {
-					ah.push(aj[ai])
-				})
-			});
-			return ah
-		}
-
-		function ac(ah, aj) {
-			if (ah.length === 1) {
-				return ah[0]
-			}
-			var ak = aj(ah[0], ah[1]);
-			for (var ai = 2, ag = ah.length; ai < ag; ++ai) {
-				ak = aj(ak, ah[ai])
-			}
-			return ak
-		}
-
-		function af(ah, ag) {
-			return U(ah, function(ai) {
-				if (ag(ai)) {
-					return ai
-				}
-			})
-		}
-
-		function ab(ah) {
-			var ag = [];
-			ah(function(ai) {
-				ag.push(ai)
-			});
-			return ag
-		}
-
-		function ae() {
-			var ag = [];
-			U(arguments, function(ah) {
-				U(ah, function(ai) {
-					ag.push(ai)
-				})
-			});
-			return ag
-		}
-		E["1"].range = Y;
-		E["1"].foreach = U;
-		E["1"].top = ad;
-		E["1"].remove = X;
-		E["1"].removeOut = T;
-		E["1"].map = p;
-		E["1"].reverse = aa;
-		E["1"].zip = R;
-		E["1"].contains = W;
-		E["1"].reduce = ac;
-		E["1"].findFirst = af;
-		E["1"].filter = S;
-		E["1"].collect = ab;
-		E["1"].concat = ae
-	});
-	E(function() {
-		var X = E["1"],
-			T = E["0"];
-
-		function S(ah, ai) {
-			var ag;
-			for (var af in ah) {
-				if ((ag = ai(af, ah[af]) !== undefined)) {
-					return ag
-				}
-			}
-		}
-
-		function Z(af) {
-			var ag = {};
-			af(function(ah, ai) {
-				ag[ah] = ai
-			});
-			return ag
-		}
-
-		function aa(ag, af) {
-			return ag === undefined ? af : ag
-		}
-
-		function ab(ag, af) {
-			X.foreach(af, function(ah) {
-				S(ah, function(ai, aj) {
-					aj !== undefined && (ag[ai] = aj)
-				})
-			});
-			return ag
-		}
-
-		function ad(af) {
-			return ab(af, Array.prototype.slice.call(arguments, 1))
-		}
-
-		function Y() {
-			var af = {};
-			return ab(af, arguments)
-		}
-
-		function U(ag, ah) {
-			var af = {};
-			X.foreach(ah, function(ai, aj) {
-				af[ai] = aa(ag[ai], aj)
-			});
-			return af
-		}
-
-		function W(af) {
-			var ag = {};
-			X.foreach(af, function(ah) {
-				ag[ah] = true
-			});
-			return {
-				contains: function(ah) {
-					return ag[ah] === true
-				}
-			}
-		}
-
-		function ae(ag) {
-			var af = [];
-			S(ag, function(ah) {
-				af.push(ah)
-			});
-			return af
-		}
-
-		function p(ai, af) {
-			var ag = W(af),
-				ah = {};
-			S(ai, function(aj, ak) {
-				!ag.contains(aj) && (ah[aj] = ak)
-			});
-			return ah
-		}
-		var V = (function() {
-			var af = {};
-			X.foreach(["Array", "Boolean", "Date", "Function", "Number", "Object", "RegExp", "String", "Window", "HTMLDocument"], function(ag) {
-				af[ag] = function(ah) {
-					return Object.prototype.toString.call(ah) == "[object " + ag + "]"
-				}
-			});
-			return af
-		})();
-
-		function R(ah, ag, af) {
-			T.callWith(function(ai) {
-				V.String(ag) ? ai(ag, af) : S(ag, ai)
-			}, function(ai, aj) {
-				Object.defineProperty(ah, ai, {
-					enumerable: true,
-					get: aj
-				})
-			});
-			return ah
-		}
-
-		function ac(ah, ag, af) {
-			T.callWith(function(ai) {
-				V.String(ag) ? ai(ag, af) : S(ag, ai)
-			}, function(aj, ai) {
-				ai = ai || {};
-				var al = ai.value,
-					ak = ai.set;
-				al !== undefined && ak(al);
-				Object.defineProperty(ah, aj, {
-					enumerable: true,
-					get: function() {
-						return al
-					},
-					set: function(am) {
-						al = ak ? aa(ak(am), am) : am
-					}
-				})
-			})
-		}
-		E["2"].foreach = S;
-		E["2"].collect = Z;
-		E["2"].defaultValue = aa;
-		E["2"].insert = ad;
-		E["2"].extend = Y;
-		E["2"].extract = U;
-		E["2"].exclude = p;
-		E["2"].collection = W;
-		E["2"].keys = ae;
-		E["2"].is = V;
-		E["2"].defineGetter = R;
-		E["2"].defineAutoProperty = ac
-	});
-	E(function() {
-		var U = E["2"],
-			X = E["1"],
-			Z = U.extend,
-			p = U.exclude;
-
-		function S(ad) {
-			var ac = document.createElement("a");
-			ac.href = ad;
-			return ac.href
-		}
-
-		function aa(ae) {
-			var ad = "",
-				ac = 0;
-			U.foreach(ae || {}, function(af, ag) {
-				if (ag !== undefined) {
-					ac++ && (ad += "&");
-					ad += encodeURIComponent(af);
-					ad += "=";
-					ad += encodeURIComponent(ag)
-				}
-			});
-			return ad
-		}
-
-		function V(af, ae, ad, ac) {
-			X.foreach(af.split(ae), function(ag) {
-				var ah = ag.split(ad);
-				ac(ah[0], ah[1])
-			})
-		}
-		var W = /(?:((?:[^:/]*):)\/\/)?([^:/?#]*)(?::([0-9]*))?(\/[^?#]*)?(\?[^#]*)?(#.*)?/;
-
-		function Y(ac) {
-			if (W.test(ac)) {
-				this.protocol = RegExp.$1;
-				this.hostname = RegExp.$2;
-				this.port = RegExp.$3;
-				this.pathname = RegExp.$4;
-				this.search = RegExp.$5;
-				this.hash = RegExp.$6
-			}
-		}
-		Y.prototype.inspect = Y.prototype.valueOf = Y.prototype.toString = Y.prototype.toJSON = function() {
-			return this.href
-		};
-		Object.defineProperties(Y.prototype, {
-			href: {
-				get: function() {
-					return this.origin + this.pathname + this.search + this.hash
-				}
-			},
-			host: {
-				get: function() {
-					return this.hostname + (this.port ? ":" + this.port : "")
-				}
-			},
-			origin: {
-				get: function() {
-					return this.protocol ? this.protocol + "//" + this.host : this.host
-				}
-			},
-			arg: {
-				get: function() {
-					var ac = {};
-					V(this.search.substring(1), "&", "=", function(ad, ae) {
-						ad !== "" && (ac[ad] = decodeURIComponent(ae))
-					});
-					return ac
-				}
-			}
-		});
-
-		function T(ac) {
-			return new Y(ac)
-		}
-
-		function R(ad, ac) {
-			ad = T(ad);
-			var ae = aa(Z(ad.arg, ac));
-			return ad.origin + ad.pathname + (ae ? "?" : "") + ae + ad.hash
-		}
-
-		function ab(ac, ad) {
-			ac = T(ac);
-			var ae = aa(p(ac.arg, ad));
-			return ac.origin + ac.pathname + (ae ? "?" : "") + ae + ac.hash
-		}
-		E["3"] = T;
-		T.toAbsolute = S;
-		T.encodeObject = aa;
-		T.concatArg = R;
-		T.removeArg = ab
-	});
-	E(function() {
-		var p = E["2"];
-		E["4"] = function(R, T) {
-			var S = new XMLHttpRequest();
-			S.onload = function() {
-				T && T(null, S)
-			};
-			S.onerror = function(U) {
-				T && T(U, S)
-			};
-			S.open(R.method || "get", R.url, true);
-			R.headers && p.foreach(R.headers, function(U, V) {
-				S.setRequestHeader(U, V)
-			});
-			S.send(R.data || null);
-			return S
-		}
-	});
-	E(function() {
-		var T = E["2"],
-			V = T.is;
-
-		function p() {
-			var aa = null,
-				Z = null;
-			return {
-				head: function() {
-					return aa
-				},
-				tail: function() {
-					return Z
-				},
-				insert: function(ad, ab) {
-					var ac = ab ? ab.previous : Z;
-					ad.next = ab;
-					ad.previous = ac;
-					ac ? ac.next = ad : aa = ad;
-					ab ? ab.previous = ad : Z = ad;
-					ad.inserted = true;
-					return ad
-				},
-				remove: function(ab) {
-					if (ab.inserted === true) {
-						ab.previous ? ab.previous.next = ab.next : aa = ab.next;
-						ab.next ? ab.next.previous = ab.previous : Z = ab.previous;
-						ab.inserted = false
-					}
-				}
-			}
-		}
-
-		function W(Z) {
-			return {
-				previous: null,
-				next: null,
-				value: Z
-			}
-		}
-
-		function R(aa, Z) {
-			var ab;
-			for (var ac = aa.head(); ac !== null; ac = ac.next) {
-				if ((ab = Z(ac.value, ac)) !== undefined) {
-					return ab
-				}
-			}
-		}
-
-		function S(aa, af, ae, ad) {
-			var ac, ab, ag, ah, Z;
-			if (V.Function(af)) {
-				ac = null;
-				ab = af;
-				ag = ae
-			} else {
-				ac = af;
-				ab = ae;
-				ag = ad
-			}
-			for (ah = aa; ah !== ac; ah = ag ? ah.previous : ah.next) {
-				if ((Z = ab(ah.value, ah)) !== undefined) {
-					return Z
-				}
-			}
-		}
-
-		function X(aa, Z) {
-			return aa.insert(W(Z), null)
-		}
-
-		function Y(aa) {
-			var Z = aa.tail();
-			aa.remove(Z);
-			return Z.value
-		}
-
-		function U(aa, Z) {
-			for (; Z && Z !== aa; Z = Z.next) {}
-			return Z === null
-		}
-		E["5"] = p;
-		p.Node = W;
-		p.foreach = R;
-		p.iterate = S;
-		p.push = X;
-		p.pop = Y;
-		p.isBefore = U
-	});
-	E(function() {
-		var ac = E["1"],
-			Z = E["2"],
-			W = E["0"],
-			T = E["5"];
-
-		function ab() {}
-
-		function af() {
-			var ag = T();
-			return {
-				trig: function() {
-					for (var ah = ag.head(); ah !== null; ah = ah.next) {
-						ah.value && ah.value.apply(null, arguments)
-					}
-				},
-				regist: function(ah) {
-					var ai = ag.insert(T.Node(ah), null);
-					return {
-						func: ah,
-						remove: function() {
-							ag.remove(ai)
-						}
-					}
-				}
-			}
-		}
-
-		function Y(ah, aj) {
-			aj && ah.push(aj);
-			var ag = ah.length;
-			W.recursion(function ai(al, ak) {
-				var am = ah[al];
-				if (am) {
-					am.apply(null, al === ag - 1 ? ak : [function() {
-						ai(al + 1, Array.prototype.slice.call(arguments, 0))
-					}].concat(ak))
-				}
-			}, 0, [])
-		}
-
-		function ae(ai, ah) {
-			var ag = ai.length;
-			ag === 0 ? ah && ah() : ac.foreach(ai, function(aj) {
-				aj(function() {
-					--ag === 0 && ah && ah()
-				})
-			})
-		}
-
-		function p(ah) {
-			var ag = af();
-			ah(function() {
-				ag.trig();
-				ag = null
-			});
-			return {
-				onComplete: function(ai) {
-					if (ag) {
-						return ag.regist(ai)
-					} else {
-						ai && ai();
-						return {
-							remove: function() {}
-						}
-					}
-				}
-			}
-		}
-
-		function R(ah) {
-			var ag;
-			return {
-				load: function(ai) {
-					if (!ag) {
-						ag = p(ah)
-					}
-					return ag.onComplete(ai)
-				}
-			}
-		}
-
-		function X(ag) {
-			return function(ai, ah) {
-				return function(ak, aj) {
-					if (ak) {
-						ag && ag(ah ? ah(ak) : ak)
-					} else {
-						ai && ai(aj)
-					}
-				}
-			}
-		}
-
-		function ad(ah) {
-			var ag, ai;
-			if (Z.is.Function(ah)) {
-				ai = function() {
-					Array.prototype.unshift.call(arguments, null);
-					ah.apply(null, arguments)
-				};
-				ag = ah
-			} else {
-				ah = ah || {};
-				ai = ah.onSuccess || ab;
-				ag = ah.onError || ab
-			}
-			return Z.insert(ah, {
-				success: ai,
-				error: ag
-			})
-		}
-
-		function V() {
-			var ag = null,
-				ah = false;
-			return {
-				prepare: function(ai) {
-					ag = ai;
-					ah && ag()
-				},
-				start: function() {
-					ag && ag();
-					ah = true
-				}
-			}
-		}
-
-		function S(ag, ai) {
-			var ah = ai(function() {
-				ag();
-				ac.foreach(ah, function(aj) {
-					aj.remove()
-				})
-			})
-		}
-
-		function aa(ag, ai) {
-			var ah = window.setTimeout(ag, ai);
-			return {
-				remove: function() {
-					window.clearTimeout(ah)
-				}
-			}
-		}
-
-		function U(ag, aj, ah) {
-			W.recursion(function ai() {
-				if (ag()) {
-					aj()
-				} else {
-					aa(ai, ah || 100)
-				}
-			})
-		}
-		E["6"].Event = af;
-		E["6"].concurrency = ae;
-		E["6"].sequence = Y;
-		E["6"].Waiter = p;
-		E["6"].Loader = R;
-		E["6"].GoOn = X;
-		E["6"].Callback = ad;
-		E["6"].Schedule = V;
-		E["6"].once = S;
-		E["6"].setTimeout = aa;
-		E["6"].polling = U
-	});
-	E(function() {
-		var U = E["1"];
-
-		function R(W, Y) {
-			var X, V;
-			for (X = 0, V = W.length; X !== V; ++X) {
-				Y(W.charAt(X))
-			}
-		}
-
-		function p(V, W) {
-			return V + "(" + W.join(",") + ")"
-		}
-
-		function S(W) {
-			var V = "";
-			U.foreach(W, function(X) {
-				V += V === "" ? X : X.replace(/(.)/, function() {
-					return RegExp.$1.toUpperCase()
-				})
-			});
-			return V
-		}
-
-		function T(aa, Y) {
-			var W = 0,
-				X, V = null,
-				Z = "";
-			X = aa.charAt(W++);
-			while (X) {
-				if (V === null) {
-					if (X === "%") {
-						V = ""
-					} else {
-						Z += X
-					}
-				} else {
-					if (X === "%") {
-						if (V === "") {
-							Z += "%"
-						} else {
-							Z += Y[V] || ""
-						}
-						V = null
-					} else {
-						V += X
-					}
-				}
-				X = aa.charAt(W++)
-			}
-			return Z
-		}
-		E["7"].foreach = R;
-		E["7"].format = T;
-		E["7"].tuple = p;
-		E["7"].camelcaseJoin = S
-	});
-	E(function() {
-		var ah = E["2"],
-			U = ah.is,
-			p = E["7"],
-			Z = p.tuple,
-			V = E["1"],
-			T = E["5"];
-		var af = function() {
-				if (window.CSS && CSS.supports) {
-					return function(ak, aj) {
-						return CSS.supports(ak, aj)
-					}
-				} else {
-					var ai = document.createElement("div");
-					return function(ak, aj) {
-						ai.removeAttribute("style");
-						ai.style.setProperty(ak, aj, "");
-						return ai.hasAttribute("style")
-					}
-				}
-			}();
-
-		function S(aj, ai) {
-			return V.findFirst(["", "-webkit-", "-ms-", "-moz-", "-o-"], function(ak) {
-				return af(ak + aj, ai)
-			})
-		}
-		var ad = function() {
-				var ai = "";
-				return function(ak, aj) {
-					return (ai ? af(ai + ak, aj) ? ai : "" : (ai = S(ak, aj))) + ak
-				}
-			}();
-
-		function W(ak, aj, ai) {
-			function al(an, am) {
-				if (U.Number(am)) {
-					am = aa(am)
-				}
-				ak.style.setProperty(ad(an, am), am, "")
-			}
-			U.String(aj) ? al(aj, ai) : ah.foreach(aj, al);
-			return {
-				element: ak,
-				remove: function() {
-					ag(ak, aj)
-				}
-			}
-		}
-
-		function ae(aj) {
-			var ai = "";
-			ah.foreach(aj, function(al, ak) {
-				ai += ad(al, ak) + ":" + ak + ";"
-			});
-			return ai
-		}
-
-		function ag(aj, ai) {
-			function ak(al) {
-				V.foreach(["", "-webkit-", "-ms-", "-moz-", "-o-"], function(am) {
-					aj.style.removeProperty(am + al)
-				})
-			}
-			U.String(ai) ? ak(ai) : U.Object(ai) ? ah.foreach(ai, ak) : ah.foreach(ai, ak);
-			return aj
-		}
-		var R = function() {
-				var ai = T(),
-					aj = T();
-				return function(ak, al) {
-					var ao = al ? aj : ai;
-					if (ao.el === undefined) {
-						ao.el = document.head.insertBefore(document.createElement("style"), al ? document.head.firstChild : null)
-					}
-					var an = ao.tail(),
-						am = T.push(ao, an === null ? 0 : an.value + 1);
-					ao.el.sheet.insertRule(ak, am.value);
-					return {
-						remove: function() {
-							var aq = am.value;
-							for (var ap = am.next; ap !== null; ap = ap.next) {
-								ap.value = aq++
-							}
-							ao.remove(am);
-							ao.el.sheet.deleteRule(aq)
-						}
-					}
-				}
-			}();
-
-		function ac(ak, aj, ai) {
-			function al(an, aq, ao) {
-				var ap = U.String(aq) ? aq : ae(aq);
-				R(an + " {" + ap + "}", ao)
-			}
-			if (U.String(ak)) {
-				return al(ak, aj, ai)
-			} else {
-				var am = [];
-				ah.foreach(ak, function(an, ao) {
-					am.push(al(an, ao, aj))
-				});
-				return {
-					remove: function() {
-						V.foreach(am, function(an) {
-							an.remove()
-						})
-					}
-				}
-			}
-		}
-
-		function aa(ai) {
-			return Math.round(ai * 100000) / 100000
-		}
-
-		function Y(ai) {
-			return ai === 0 ? 0 : (aa(ai) << 0) + "px"
-		}
-
-		function X(ai) {
-			return ai === 0 ? 0 : aa(ai) + "deg"
-		}
-
-		function ab(ai) {
-			return function(aj) {
-				return Z(ai, [X(aj)])
-			}
-		}
-		W.ruleString = ae;
-		W.test = af;
-		W.testPrefix = S;
-		W.testStyleName = ad;
-		W.remove = ag;
-		W.insertRule = R;
-		W.insertRules = ac;
-		W.px = Y;
-		W.deg = X;
-		W.full = function(ai) {
-			return ah.extend({
-				position: "absolute",
-				left: 0,
-				right: 0,
-				top: 0,
-				bottom: 0
-			}, ai || {})
-		};
-		W.size = function(ak, aj, ai) {
-			W(ak, {
-				width: Y(aj),
-				height: Y(ai)
-			})
-		};
-		W.transform = function() {
-			var ai = [];
-			V.foreach(arguments, function(aj, ak) {
-				ak !== 0 && ai.push(aj)
-			});
-			W(arguments[0], "transform", ai.join(" "))
-		};
-		W.matrix = function(ai) {
-			return Z("matrix", V.map(ai, aa))
-		};
-		W.matrix3d = function(ai) {
-			return Z("matrix3d", V.map(ai, aa))
-		};
-		W.translate = function(ai, ak, aj) {
-			return Z("translate3d", V.map([ai, ak, aj], function(al) {
-				return W.px(al)
-			}))
-		};
-		W.rotateX = ab("rotateX");
-		W.rotateY = ab("rotateY");
-		W.rotateZ = ab("rotateZ");
-		W.scale = function() {
-			return "scale(" + Array.prototype.join.call(arguments, ",") + ")"
-		};
-		W.s = function(ai) {
-			return aa(ai) + "s"
-		};
-		W.url = function(ai) {
-			return Z("url", [ai])
-		};
-		W.bezier = function(ai) {
-			return Z("cubic-bezier", ai)
-		};
-		E["8"] = W
-	});
-	E(function() {
+	
+        window.Icon = function(imageName) {
+            var imageSourceMap = {  //图标url
+                "image-not-found": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"loading-c": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"loading-new-page": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"loading-o": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"music": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"page-error": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"powered-by": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"refresh-arrow": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"tips-click-first": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"tips-push-first": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"tips-push": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"tips-scratch": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"arrow/mi01": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"arrow/mi04": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"author/create-active": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"author/create": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"author/follow": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"author/following": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"contact/frame": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"contact/title": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"following/back": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"following/download-active": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"following/download": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"following/ok": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"map/back": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"map/location": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"razzies/banner-center": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"razzies/banner-left": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"razzies/banner-right": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"signup/close": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"signup/star": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"video/close": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
+		"video/play": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png"
+            },
+            imgInfo = n[imageName],
+            halfW = Math.round(imgInfo.w / 2),
+            halfH = Math.round(imgInfo.h / 2),
+            E8 = E["8"],
+            E9 = E["9"],
+            img = new Image();
+    
+            img.src = imageSourceMap[imageName];
+
+            E9(img, {
+                css: {
+                        width: E8.px(halfW),
+                        height: E8.px(halfH)
+                },
+                ps: {
+                        width: halfW,
+                        height: halfH
+                }
+            });
+            
+            return img;
+        };
+        
+    E(function() { //创建第一个函数集：函数调用集合
+        function loopExecFn(X, W, V) {   //两个参数时，传入的是上限，和执行函数，初始值默认为0，三个参数时，传入的是初始值，上限和调用函数。在指定范围内循环执行函数，无返回值
+                var Z, U, Y;
+                if (V) {
+                        Y = V;
+                        Z = X;
+                        U = W
+                } else {
+                        Y = W;
+                        Z = 0;
+                        U = X
+                }
+                for (; Z !== U; ++Z) {
+                        Y(Z)
+                }
+        }
+
+        function callExecFn(U) { //null作为this,调用传入的函数，返回执行结果
+                return new Function("return " + U)().apply(null, Array.prototype.slice.call(arguments, 1))
+        }
+
+        function callWithExecFn(U, V) { //将第二个参数作为第一个参数的参数执行函数，返回执行结果
+                return U(V)
+        }
+
+        //将null作为this执行函数，返回函数
+        function recursion(U) {
+                U.apply(null, Array.prototype.slice.call(arguments, 1));
+                return U
+        }
+        E["0"].loop = loopExecFn;
+        E["0"].call = callExecFn;
+        E["0"].callWith = callWithExecFn;
+        E["0"].recursion = recursion;
+    });
+    
+    E(function() {  //创建第二个函数集：数组操作集合
+            var E0 = E["0"],
+                    loop = E0.loop;
+
+            function range(ah, ag) {    //产生一个0~ah或ah~ag的数组
+                    return collect(function(ai) {
+                            ag === undefined ? loop(ah, ai) : loop(ah, ag, ai)
+                    })
+            }
+
+            function foreach(al, aj, ak) { //从ak（缺省值为0）开始，将数组al的每个值/索引对传给aj执行，如果有结果则返回执行结果
+                    var ai;
+                    for (var ah = ak || 0, ag = al.length; ah < ag; ++ah) {
+                            if ((ai = aj(al[ah], ah)) !== undefined) {
+                                    return ai
+                            }
+                    }
+            }
+
+            function top(ah, ag) {    //将ag替换ah最后一个元素，如果没有ag，则返回ah最后一个元素,取出或赋值数组最后一个元素
+                    if (ag === undefined) {
+                            return ah[ah.length - 1]
+                    } else {
+                            ah[ah.length - 1] = ag
+                    }
+            }
+
+            function remove(ah, ag) { //过滤出数组ah中所有不符合条件ag的元素，即删除所有符合条件ag的元素，返回的是副本，不会影响ah
+                    var ai = [];
+                    foreach(ah, function(aj) {
+                            !ag(aj) && ai.push(aj)
+                    });
+                    return ai
+            }
+
+            function filter(ah, ag) { //过滤出数组ah中所有符合条件ag的元素。
+                    var ai = [];
+                    foreach(ah, function(ak, aj) {
+                            ag(ak) && ai.push(ak)
+                    });
+                    return ai
+            }
+
+            function removeOut(ah, ag) {    //移除数组ah中所有符合条件ag的元素，将更改ah。
+                    var ai = [],
+                            aj = 0;
+                    foreach(ah, function(al, ak) {
+                            ag(al) && ai.push(ak)
+                    });
+                    foreach(ai, function(ak) {
+                            ah.splice(ak - aj++, 1)
+                    })
+            }
+
+            function map(ag, ah) { //返回由映射关系ah映射的数组
+                    var ai = [];
+                    foreach(ag, function(ak, aj) {
+                            ai.push(ah(ak, aj))
+                    });
+                    return ai
+            }
+
+            function contains(ai, ah) { //some函数，如果数组ai中有一个元素满足条件ah，则返回true,否则返回false
+                    for (var aj = 0, ag = ai.length; aj !== ag; ++aj) {
+                            if (ah(ai[aj])) {
+                                    return true
+                            }
+                    }
+                    return false
+            }
+
+            function reverse(ah) { //反转数组ah，返回副本，不影响ah
+                    var ag = ah.length - 1,
+                            ai = ag === -1 ? [] : new Array(ag);
+                    foreach(ah, function(ak, aj) {
+                            ai[ag - aj] = ak
+                    });
+                    return ai
+            }
+
+            function zip(ag) { 
+                    var ah = [];
+                    loop(ag[0].length, function(ai) {
+                            foreach(ag, function(aj) {
+                                    ah.push(aj[ai])
+                            })
+                    });
+                    return ah
+            }
+
+            function reduce(ah, aj) { //reduce，将ah前两个元素传给aj执行，执行结果作为下一次迭代的第一个参数，ah的下一个元素是第二个参数
+                    if (ah.length === 1) {
+                            return ah[0]
+                    }
+                    var ak = aj(ah[0], ah[1]);
+                    for (var ai = 2, ag = ah.length; ai < ag; ++ai) {
+                            ak = aj(ak, ah[ai])
+                    }
+                    return ak
+            }
+
+            function findFirst(ah, ag) {   //找出数组中第一个符合条件ag的元素
+                    return foreach(ah, function(ai) {
+                            if (ag(ai)) {
+                                    return ai
+                            }
+                    })
+            }
+
+            function collect(ah) {
+                    var ag = [];
+                    ah(function(ai) {
+                            ag.push(ai)
+                    });
+                    return ag
+            }
+
+            function concat() { //把多个数组拼接到一个数组
+                    var ag = [];
+                    foreach(arguments, function(ah) {
+                            foreach(ah, function(ai) {
+                                    ag.push(ai)
+                            })
+                    });
+                    return ag
+            }
+            E["1"].range = range;
+            E["1"].foreach = foreach;
+            E["1"].top = top;
+            E["1"].remove = remove;
+            E["1"].removeOut = removeOut;
+            E["1"].map = map;
+            E["1"].reverse = reverse;
+            E["1"].zip = zip;
+            E["1"].contains = contains;
+            E["1"].reduce = reduce;
+            E["1"].findFirst = findFirst;
+            E["1"].filter = filter;
+            E["1"].collect = collect;
+            E["1"].concat = concat
+    });
+    
+    E(function() {//创建第三个函数集：对象操作集合
+            var E1 = E["1"],
+                    E0 = E["0"];
+
+            function foreach(ah, ai) { //遍历对象ah，key/value作为ai的参数，如果执行结果不为undefined则返回结果
+                    var ag;
+                    for (var af in ah) {
+                            if ((ag = ai(af, ah[af]) !== undefined)) {
+                                    return ag
+                            }
+                    }
+            }
+
+            function collect(af) {
+                    var ag = {};
+                    af(function(ah, ai) {
+                            ag[ah] = ai
+                    });
+                    return ag
+            }
+
+            function defaultValue(ag, af) {
+                    return ag === undefined ? af : ag
+            }
+
+            function merge(ag, af) { //将多个对象添加到ag，第二个参数是元素是对象的数组
+                    E1.foreach(af, function(ah) {
+                            foreach(ah, function(ai, aj) {
+                                    aj !== undefined && (ag[ai] = aj)
+                            })
+                    });
+                    return ag
+            }
+
+            function insert(af) { //将第一个对象后面的所有对象添加到第一个对象
+                    return merge(af, Array.prototype.slice.call(arguments, 1))
+            }
+
+            function extend() { //用所有参数扩展生成一个新对象
+                    var af = {};
+                    return merge(af, arguments)
+            }
+
+            function extract(ag, ah) { //合并数组ag,ah生成对象，可以用于将数组转化为对象
+                    var af = {};
+                    E1.foreach(ah, function(ai, aj) {
+                            af[ai] = defaultValue(ag[ai], aj)
+                    });
+                    return af
+            }
+
+            function collection(af) { //判断数组af是否包含某元素
+                    var ag = {};
+                    E1.foreach(af, function(ah) {
+                            ag[ah] = true
+                    });
+                    return {
+                            contains: function(ah) {
+                                    return ag[ah] === true
+                            }
+                    }
+            }
+
+            function keys(ag) { //数组将对象转化为数组
+                    var af = [];
+                    foreach(ag, function(ah) {
+                            af.push(ah)
+                    });
+                    return af
+            }
+
+            function exclude(ai, af) { //从对象ai中提取指定key值的子集，key值通过af指定
+                    var ag = collection(af),
+                            ah = {};
+                    foreach(ai, function(aj, ak) {
+                            !ag.contains(aj) && (ah[aj] = ak)
+                    });
+                    return ah
+            }
+            var is = (function() {   //对象类型判断
+                    var af = {};
+                    E1.foreach(["Array", "Boolean", "Date", "Function", "Number", "Object", "RegExp", "String", "Window", "HTMLDocument"], function(ag) {
+                            af[ag] = function(ah) {
+                                    return Object.prototype.toString.call(ah) == "[object " + ag + "]"
+                            }
+                    });
+                    return af
+            })();
+
+            function defineGetter(ah, ag, af) {    //给对象ah添加可枚举只读属性，如果ag是字符串，则ag是key,af是value，如果ag是对象，添加ag中的键值对
+                    E0.callWith(function(ai) {
+                            is.String(ag) ? ai(ag, af) : foreach(ag, ai)
+                    }, function(ai, aj) {
+                            Object.defineProperty(ah, ai, {
+                                    enumerable: true,
+                                    get: aj
+                            })
+                    });
+                    return ah
+            }
+
+            function defineAutoProperty(ah, ag, af) {   //给对象ah添加可枚举可读写属性，如果ag是字符串，则af是值和写方法，如果ag是对象，则af是key/{vaule:值,set:写方法}
+                    E0.callWith(function(ai) {
+                            is.String(ag) ? ai(ag, af) : foreach(ag, ai)
+                    }, function(aj, ai) {
+                            ai = ai || {};
+                            var al = ai.value,
+                                    ak = ai.set;
+                            al !== undefined && ak(al);
+                            Object.defineProperty(ah, aj, {
+                                    enumerable: true,
+                                    get: function() {
+                                            return al
+                                    },
+                                    set: function(am) {
+                                            al = ak ? defaultValue(ak(am), am) : am
+                                    }
+                            })
+                    })
+            }
+            E["2"].foreach = foreach;
+            E["2"].collect = collect;
+            E["2"].defaultValue = defaultValue;
+            E["2"].insert = insert;
+            E["2"].extend = extend;
+            E["2"].extract = extract;
+            E["2"].exclude = exclude;
+            E["2"].collection = collection;
+            E["2"].keys = keys;
+            E["2"].is = is;
+            E["2"].defineGetter = defineGetter;
+            E["2"].defineAutoProperty = defineAutoProperty;
+    });
+    
+    E(function() {  //创建第四个函数集：url操作集合
+            var E2 = E["2"],
+                    E1 = E["1"],
+                    extend = E2.extend,
+                    exclude = E2.exclude;
+
+            function toAbsolute(ad) {    //获取路径ad在站点的绝对路径
+                    var ac = document.createElement("a");
+                    ac.href = ad;
+                    return ac.href
+            }
+
+            function encodeObject(ae) {   //将对象ae转化成url中的查询条件 key1=value1&key2=value2...
+                    var ad = "",
+                            ac = 0;
+                    E2.foreach(ae || {}, function(af, ag) {
+                            if (ag !== undefined) {
+                                    ac++ && (ad += "&");
+                                    ad += encodeURIComponent(af);
+                                    ad += "=";
+                                    ad += encodeURIComponent(ag)
+                            }
+                    });
+                    return ad
+            }
+
+            function V(af, ae, ad, ac) { //将url的search部分转成对象
+                    E1.foreach(af.split(ae), function(ag) {
+                            var ah = ag.split(ad);
+                            ac(ah[0], ah[1])
+                    })
+            }
+            var W = /(?:((?:[^:/]*):)\/\/)?([^:/?#]*)(?::([0-9]*))?(\/[^?#]*)?(\?[^#]*)?(#.*)?/;    //匹配URL,将各个部分分组
+
+            function Y(ac) {
+                    if (W.test(ac)) {
+                            this.protocol = RegExp.$1;
+                            this.hostname = RegExp.$2;
+                            this.port = RegExp.$3;
+                            this.pathname = RegExp.$4;
+                            this.search = RegExp.$5;
+                            this.hash = RegExp.$6
+                    }
+            }
+            Y.prototype.inspect = Y.prototype.valueOf = Y.prototype.toString = Y.prototype.toJSON = function() {
+                    return this.href
+            };
+            Object.defineProperties(Y.prototype, {
+                    href: {
+                            get: function() {
+                                    return this.origin + this.pathname + this.search + this.hash
+                            }
+                    },
+                    host: {
+                            get: function() {
+                                    return this.hostname + (this.port ? ":" + this.port : "")
+                            }
+                    },
+                    origin: {
+                            get: function() {
+                                    return this.protocol ? this.protocol + "//" + this.host : this.host
+                            }
+                    },
+                    arg: {
+                            get: function() {
+                                    var ac = {};
+                                    V(this.search.substring(1), "&", "=", function(ad, ae) {
+                                            ad !== "" && (ac[ad] = decodeURIComponent(ae))
+                                    });
+                                    return ac
+                            }
+                    }
+            });
+
+            function T(ac) {
+                    return new Y(ac)
+            }
+
+            function concatArg(ad, ac) {    //将ac中的查询参数键值对添加到url ad中
+                    ad = T(ad);
+                    var ae = encodeObject(extend(ad.arg, ac));
+                    return ad.origin + ad.pathname + (ae ? "?" : "") + ae + ad.hash
+            }
+
+            function removeArg(ac, ad) {    //从url ac中移除指定的查询参数集合ad
+                    ac = T(ac);
+                    var ae = encodeObject(exclude(ac.arg, ad));
+                    return ac.origin + ac.pathname + (ae ? "?" : "") + ae + ac.hash
+            }
+            E["3"] = T;
+            T.toAbsolute = toAbsolute;
+            T.encodeObject = encodeObject;
+            T.concatArg = concatArg;
+            T.removeArg = removeArg
+    });
+        
+    E(function() {  //创建第五个函数集：ajax请求
+            var E2 = E["2"];
+            E["4"] = function(R, T) {
+                    var S = new XMLHttpRequest();
+                    S.onload = function() {
+                            T && T(null, S)
+                    };
+                    S.onerror = function(U) {
+                            T && T(U, S)
+                    };
+                    S.open(R.method || "get", R.url, true);
+                    R.headers && E2.foreach(R.headers, function(U, V) {
+                            S.setRequestHeader(U, V)
+                    });
+                    S.send(R.data || null);
+                    return S
+            }
+    });
+        
+    E(function() {  //双向链表，链表和节点是解藕的，非循环列表
+            var E2 = E["2"],
+                    is = E2.is;
+
+            function p() {  //创建一个链表的工厂方法。一个链表包括头尾指针和插入、删除操作。
+                    var aa = null,
+                            Z = null;
+                    return {
+                            head: function() {
+                                    return aa
+                            },
+                            tail: function() {
+                                    return Z
+                            },
+                            insert: function(ad, ab) {      //将节点ad插到ab前面,如果ab是null，则ad插入到链表末尾
+                                    var ac = ab ? ab.previous : Z;
+                                    ad.next = ab;
+                                    ad.previous = ac;
+                                    ac ? ac.next = ad : aa = ad;
+                                    ab ? ab.previous = ad : Z = ad;
+                                    ad.inserted = true;
+                                    return ad
+                            },
+                            remove: function(ab) {  //将节点ab从链表中删除
+                                    if (ab.inserted === true) {
+                                            ab.previous ? ab.previous.next = ab.next : aa = ab.next;
+                                            ab.next ? ab.next.previous = ab.previous : Z = ab.previous;
+                                            ab.inserted = false
+                                    }
+                            }
+                    }
+            }
+
+            function Node(Z) { //创建节点的工厂方法
+                    return {
+                            previous: null,
+                            next: null,
+                            value: Z
+                    }
+            }
+
+            function foreach(aa, Z) { //对链表aa中每个节点执行Z方法,如果Z方法有返回值则跳出
+                    var ab;
+                    for (var ac = aa.head(); ac !== null; ac = ac.next) {
+                            if ((ab = Z(ac.value, ac)) !== undefined) {
+                                    return ab
+                            }
+                    }
+            }
+
+            function iterate(aa, af, ae, ad) { //对一个区间的节点遍历执行函数： 开始节点，结束节点，执行函数，向前/向后 ，结束节点为null则从开始节点执行到底
+                    var ac, ab, ag, ah, Z;
+                    if (is.Function(af)) {
+                            ac = null;
+                            ab = af;
+                            ag = ae
+                    } else {
+                            ac = af;
+                            ab = ae;
+                            ag = ad
+                    }
+                    for (ah = aa; ah !== ac; ah = ag ? ah.previous : ah.next) {
+                            if ((Z = ab(ah.value, ah)) !== undefined) {
+                                    return Z
+                            }
+                    }
+            }
+
+            function push(aa, Z) { //将Z作为节点插入到链表末尾
+                    return aa.insert(Node(Z), null)
+            }
+
+            function pop(aa) { //弹出链表末尾元素，并返回这个元素的值
+                    var Z = aa.tail();
+                    aa.remove(Z);
+                    return Z.value
+            }
+
+            function isBefore(aa, Z) { //判断节点Z是否在节点aa前面
+                    for (; Z && Z !== aa; Z = Z.next) {}
+                    return Z === null
+            }
+            E["5"] = p;
+            p.Node = Node;
+            p.foreach = foreach;
+            p.iterate = iterate;
+            p.push = push;
+            p.pop = pop;
+            p.isBefore = isBefore
+    });
+    
+    E(function() {  //事件管理模块
+            var E1 = E["1"],
+                    E2 = E["2"],
+                    E0 = E["0"],
+                    E5 = E["5"];
+
+            function blankFn() {}
+
+            function Event() {
+                    var ag = E5();
+                    return {
+                            trig: function() {
+                                    for (var ah = ag.head(); ah !== null; ah = ah.next) {
+                                            ah.value && ah.value.apply(null, arguments)
+                                    }
+                            },
+                            regist: function(ah) {
+                                    var ai = ag.insert(E5.Node(ah), null);
+                                    return {
+                                            func: ah,
+                                            remove: function() {
+                                                    ag.remove(ai)
+                                            }
+                                    }
+                            }
+                    }
+            }
+
+            function sequence(ah, aj) {
+                    aj && ah.push(aj);
+                    var ag = ah.length;
+                    E0.recursion(function ai(al, ak) {
+                            var am = ah[al];
+                            if (am) {
+                                    am.apply(null, al === ag - 1 ? ak : [function() {
+                                            ai(al + 1, Array.prototype.slice.call(arguments, 0))
+                                    }].concat(ak))
+                            }
+                    }, 0, [])
+            }
+
+            function concurrency(ai, ah) {
+                    var ag = ai.length;
+                    ag === 0 ? ah && ah() : E1.foreach(ai, function(aj) {
+                            aj(function() {
+                                    --ag === 0 && ah && ah()
+                            })
+                    })
+            }
+
+            function Waiter(ah) {
+                    var ag = Event();
+                    ah(function() {
+                            ag.trig();
+                            ag = null
+                    });
+                    return {
+                            onComplete: function(ai) {
+                                    if (ag) {
+                                            return ag.regist(ai)
+                                    } else {
+                                            ai && ai();
+                                            return {
+                                                    remove: function() {}
+                                            }
+                                    }
+                            }
+                    }
+            }
+
+            function Loader(ah) {
+                    var ag;
+                    return {
+                            load: function(ai) {
+                                    if (!ag) {
+                                            ag = Waiter(ah)
+                                    }
+                                    return ag.onComplete(ai)
+                            }
+                    }
+            }
+
+            function GoOn(ag) {
+                    return function(ai, ah) {
+                            return function(ak, aj) {
+                                    if (ak) {
+                                            ag && ag(ah ? ah(ak) : ak)
+                                    } else {
+                                            ai && ai(aj)
+                                    }
+                            }
+                    }
+            }
+
+            function Callback(ah) {
+                    var ag, ai;
+                    if (E2.is.Function(ah)) {
+                            ai = function() {
+                                    Array.prototype.unshift.call(arguments, null);
+                                    ah.apply(null, arguments)
+                            };
+                            ag = ah
+                    } else {
+                            ah = ah || {};
+                            ai = ah.onSuccess || blankFn;
+                            ag = ah.onError || blankFn
+                    }
+                    return E2.insert(ah, {
+                            success: ai,
+                            error: ag
+                    })
+            }
+
+            function Schedule() {
+                    var ag = null,
+                            ah = false;
+                    return {
+                            prepare: function(ai) {
+                                    ag = ai;
+                                    ah && ag()
+                            },
+                            start: function() {
+                                    ag && ag();
+                                    ah = true
+                            }
+                    }
+            }
+
+            function once(ag, ai) {
+                    var ah = ai(function() {
+                            ag();
+                            E1.foreach(ah, function(aj) {
+                                    aj.remove()
+                            })
+                    })
+            }
+
+            function setTimeoutFn(ag, ai) {   
+                    var ah = window.setTimeout(ag, ai);
+                    return {
+                            remove: function() {
+                                    window.clearTimeout(ah)
+                            }
+                    }
+            }
+
+            function polling(ag, aj, ah) {  //条件ag成立则立即执行aj，否则ah毫秒后再判断，轮询
+                    E0.recursion(function ai() { 
+                            if (ag()) {
+                                    aj()
+                            } else {
+                                    setTimeoutFn(ai, ah || 100)
+                            }
+                    })
+            }
+            E["6"].Event = Event;
+            E["6"].concurrency = concurrency;
+            E["6"].sequence = sequence;
+            E["6"].Waiter = Waiter;
+            E["6"].Loader = Loader;
+            E["6"].GoOn = GoOn;
+            E["6"].Callback = Callback;
+            E["6"].Schedule = Schedule;
+            E["6"].once = once;
+            E["6"].setTimeout = setTimeoutFn;
+            E["6"].polling = polling
+    });
+    
+    E(function() {  //字符串处理模块
+            var E1 = E["1"];
+
+            function foreach(W, Y) {
+                    var X, V;
+                    for (X = 0, V = W.length; X !== V; ++X) {
+                            Y(W.charAt(X))
+                    }
+            }
+
+            function tuple(V, W) {
+                    return V + "(" + W.join(",") + ")"
+            }
+
+            function camelcaseJoin(W) { //驼峰命名法
+                    var V = "";
+                    E1.foreach(W, function(X) {
+                            V += V === "" ? X : X.replace(/(.)/, function() {
+                                    return RegExp.$1.toUpperCase()
+                            })
+                    });
+                    return V
+            }
+
+            function format(aa, Y) {
+                    var W = 0,
+                            X, V = null,
+                            Z = "";
+                    X = aa.charAt(W++);
+                    while (X) {
+                            if (V === null) {
+                                    if (X === "%") {
+                                            V = ""
+                                    } else {
+                                            Z += X
+                                    }
+                            } else {
+                                    if (X === "%") {
+                                            if (V === "") {
+                                                    Z += "%"
+                                            } else {
+                                                    Z += Y[V] || ""
+                                            }
+                                            V = null
+                                    } else {
+                                            V += X
+                                    }
+                            }
+                            X = aa.charAt(W++)
+                    }
+                    return Z
+            }
+            E["7"].foreach = foreach;
+            E["7"].format = format;
+            E["7"].tuple = tuple;
+            E["7"].camelcaseJoin = camelcaseJoin   
+    });
+        
+    E(function() {  //css样式管理模块
+            var E2 = E["2"],
+                    is = E2.is,
+                    E7 = E["7"],
+                    tuple = E7.tuple,
+                    E1 = E["1"],
+                    E5 = E["5"];
+            var test = function() {   //检查某css样式是否支持
+                            if (window.CSS && CSS.supports) {
+                                    return function(ak, aj) {
+                                            return CSS.supports(ak, aj)
+                                    }
+                            } else {
+                                    var ai = document.createElement("div");
+                                    return function(ak, aj) {
+                                            ai.removeAttribute("style");
+                                            ai.style.setProperty(ak, aj, "");
+                                            return ai.hasAttribute("style")
+                                    }
+                            }
+                    }();
+
+            function testPrefix(aj, ai) {    //返回当前支持的样式前缀
+                    return E1.findFirst(["", "-webkit-", "-ms-", "-moz-", "-o-"], function(ak) {
+                            return test(ak + aj, ai)
+                    })
+            }
+            var testStyleName = function() {
+                            var ai = "";
+                            return function(ak, aj) {   //返回包含前缀的样式名
+                                    return (ai ? test(ai + ak, aj) ? ai : "" : (ai = testPrefix(ak, aj))) + ak
+                            }
+                    }();
+
+            function W(ak, aj, ai) {    //给元素ak创建样式aj=ai
+                    function al(an, am) {
+                            if (is.Number(am)) {
+                                    am = aa(am)
+                            }
+                            ak.style.setProperty(testStyleName(an, am), am, "")
+                    }
+                    is.String(aj) ? al(aj, ai) : E2.foreach(aj, al);
+                    return {
+                            element: ak,
+                            remove: function() {
+                                    remove(ak, aj)
+                            }
+                    }
+            }
+
+            function ruleString(aj) { //多条样式组成的样式规则
+                    var ai = "";
+                    E2.foreach(aj, function(al, ak) {
+                            ai += testStyleName(al, ak) + ":" + ak + ";"
+                    });
+                    return ai
+            }
+
+            function remove(aj, ai) {   //从元素aj上移除样式ai
+                    function ak(al) {
+                            E1.foreach(["", "-webkit-", "-ms-", "-moz-", "-o-"], function(am) {
+                                    aj.style.removeProperty(am + al)
+                            })
+                    }
+                    is.String(ai) ? ak(ai) : is.Object(ai) ? E2.foreach(ai, ak) : E2.foreach(ai, ak);
+                    return aj
+            }
+            var insertRule = function() {
+                            var ai = E5(),
+                                    aj = E5();
+                            return function(ak, al) {
+                                    var ao = al ? aj : ai;
+                                    if (ao.el === undefined) {
+                                            ao.el = document.head.insertBefore(document.createElement("style"), al ? document.head.firstChild : null)
+                                    }
+                                    var an = ao.tail(),
+                                            am = E5.push(ao, an === null ? 0 : an.value + 1);
+                                    ao.el.sheet.insertRule(ak, am.value);
+                                    return {
+                                            remove: function() {
+                                                    var aq = am.value;
+                                                    for (var ap = am.next; ap !== null; ap = ap.next) {
+                                                            ap.value = aq++
+                                                    }
+                                                    ao.remove(am);
+                                                    ao.el.sheet.deleteRule(aq)
+                                            }
+                                    }
+                            }
+                    }();
+
+            function insertRules(ak, aj, ai) {
+                    function al(an, aq, ao) {
+                            var ap = is.String(aq) ? aq : ruleString(aq);
+                            insertRule(an + " {" + ap + "}", ao)
+                    }
+                    if (is.String(ak)) {
+                            return al(ak, aj, ai)
+                    } else {
+                            var am = [];
+                            E2.foreach(ak, function(an, ao) {
+                                    am.push(al(an, ao, aj))
+                            });
+                            return {
+                                    remove: function() {
+                                            E1.foreach(am, function(an) {
+                                                    an.remove()
+                                            })
+                                    }
+                            }
+                    }
+            }
+
+            function aa(ai) {
+                    return Math.round(ai * 100000) / 100000
+            }
+
+            function px(ai) {
+                    return ai === 0 ? 0 : (aa(ai) << 0) + "px"
+            }
+
+            function deg(ai) {
+                    return ai === 0 ? 0 : aa(ai) + "deg"
+            }
+
+            function ab(ai) {
+                    return function(aj) {
+                            return tuple(ai, [deg(aj)])
+                    }
+            }
+            W.ruleString = ruleString;
+            W.test = test;
+            W.testPrefix = testPrefix;
+            W.testStyleName = testStyleName;
+            W.remove = remove;
+            W.insertRule = insertRule;
+            W.insertRules = insertRules;
+            W.px = px;
+            W.deg = deg;
+            W.full = function(ai) {
+                    return E2.extend({
+                            position: "absolute",
+                            left: 0,
+                            right: 0,
+                            top: 0,
+                            bottom: 0
+                    }, ai || {})
+            };
+            W.size = function(ak, aj, ai) {
+                    W(ak, {
+                            width: px(aj),
+                            height: px(ai)
+                    })
+            };
+            W.transform = function() {
+                    var ai = [];
+                    E1.foreach(arguments, function(aj, ak) {
+                            ak !== 0 && ai.push(aj)
+                    });
+                    W(arguments[0], "transform", ai.join(" "))
+            };
+            W.matrix = function(ai) {
+                    return tuple("matrix", E1.map(ai, aa))
+            };
+            W.matrix3d = function(ai) {
+                    return tuple("matrix3d", E1.map(ai, aa))
+            };
+            W.translate = function(ai, ak, aj) {
+                    return tuple("translate3d", E1.map([ai, ak, aj], function(al) {
+                            return W.px(al)
+                    }))
+            };
+            W.rotateX = ab("rotateX");
+            W.rotateY = ab("rotateY");
+            W.rotateZ = ab("rotateZ");
+            W.scale = function() {
+                    return "scale(" + Array.prototype.join.call(arguments, ",") + ")"
+            };
+            W.s = function(ai) {
+                    return aa(ai) + "s"
+            };
+            W.url = function(ai) {
+                    return tuple("url", [ai])
+            };
+            W.bezier = function(ai) {
+                    return tuple("cubic-bezier", ai)
+            };
+            E["8"] = W
+    });
+        
+	E(function() {  //Dom元素管理模块
 		var R = E["2"],
 			V = R.is,
 			Y = E["1"],
@@ -1315,8 +1385,9 @@
 		S.findAncestor = U;
 		S.onInsert = ab
 	});
-	E(function() {
+	E(function() {  //浏览器检测模块
 		var S = navigator.userAgent,
+                
 			R = navigator.appVersion,
 			p = navigator.platform;
 		E["10"] = {
@@ -1342,7 +1413,7 @@
 			msPointer: window.navigator.msPointerEnabled
 		}
 	});
-	E(function() {
+	E(function() {  //触摸事件管理模块
 		var W = E["1"],
 			ai = E["2"],
 			af = E["10"],
@@ -1433,7 +1504,7 @@
 		E["11"].onPointerUp = ad;
 		E["11"].onMoveUp = R
 	});
-	E(function() {
+	E(function() {  //css动画管理模块
 		var ai = E["2"],
 			Z = E["8"],
 			S = E["9"],
@@ -1611,7 +1682,7 @@
 		E["12"].animation = ae;
 		E["12"].runAnimation = W
 	});
-	E(function() {
+	E(function() {  //canvas保存为图片
 		function p(R) {
 			var S = document.createElement("canvas"),
 				T = S.getContext("2d");
@@ -1807,17 +1878,18 @@
 			layImage: S
 		}
 	});
-	E(function() {
-		var ab = E["8"],
-			W = E["6"],
-			ac = E["3"],
-			T = E["13"],
-			Y = E["9"],
-			ae = E["14"],
-			U = E["16"],
-			R = W.Loader(function(p) {
-				var af = Z.imageNotFound = S("image-not-found"),
-					ag = Y.bind(af, "load", function() {
+        
+	E(function() {  //图像管理模块
+		var E8 = E["8"],
+			E6 = E["6"],
+			E3 = E["3"],
+			E13 = E["13"],
+			E9 = E["9"],
+			E14 = E["14"],
+			E16 = E["16"],
+			R = E6.Loader(function(p) {
+				var af = Z.imageNotFound = Icon("image-not-found"),
+					ag = E9.bind(af, "load", function() {
 						ag.remove();
 						p()
 					})
@@ -1836,7 +1908,7 @@
 			return window.contentPath + "image/" + p
 		}
 
-		function ad(ah, ai, p) {
+		function load(ah, ai, p) {
 			var ag = false;
 			if (/^#/.test(ai) || /^rgba/gi.test(ai)) {
 				ah.color = ai;
@@ -1853,7 +1925,7 @@
 					p.onError && p.onError()
 				})
 			}
-			if (/\.([^.]*)$/.test(ac(ai).pathname.replace(/!([^!]*)$/, "")) && !(RegExp.$1 in {
+			if (/\.([^.]*)$/.test(E3(ai).pathname.replace(/!([^!]*)$/, "")) && !(RegExp.$1 in {
 				jpeg: true,
 				jpg: true,
 				svg: true,
@@ -1868,7 +1940,7 @@
 			ah.onerror = function() {
 				if (!ag) {
 					ah.src = "";
-					ah.src = ac.concatArg(ai, {
+					ah.src = E3.concatArg(ai, {
 						t: (new Date()).getTime()
 					});
 					ag = true
@@ -1886,9 +1958,9 @@
 		}
 
 		function Z(af, p) {
-			return ad(new Image(), af, p)
+			return load(new Image(), af, p)
 		}
-		var S = window.Icon ||
+		var Icon = window.Icon ||
 		function() {    //这个函数的功能是将原始图片image加载完后，将所需部分（按imageInfo缩放位移）绘制到canvas，然后再通过toDataUrl生产img的src，返回所需的img
                         //缓存图片
 			var imageCache = {};
@@ -1900,20 +1972,20 @@
 				if (img.loadDone) {
 					ai(img)
 				} else {
-					var am = Y.bind(img, "load", function() {
+					var am = E9.bind(img, "load", function() {
 						am.remove();
 						ai(img)
 					});
 					if (!img.src) {
 						var ag = getImageSrc(an + ".png"),
-							aj = ae(ag);
+							aj = E14(ag);
 						img.src = aj || ag;
 						!aj && (img.crossOrigin = "*");
-						ad(img, aj || ag, {
+						load(img, aj || ag, {
 							onLoad: function() {
 								img.loadDone = true;
-								ae(ag, function() {
-									return T.toDataURL(img)
+								E14(ag, function() {
+									return E13.toDataURL(img)
 								})
 							}
 						})
@@ -1929,21 +2001,21 @@
 					halfH = Math.round(imgInfo.h / 2);
 				canvas.width = imgInfo.w;
 				canvas.height = imgInfo.h;
-				ab(img, "visibility", "hidden");
+				E8(img, "visibility", "hidden");
                                 //获取img的src并在img加载完成后执行第二个参数中的函数，第二个参数中的函数的参数是加载完的图片
 				af(am, function(image) {
 					context.drawImage(image, imgInfo.x, imgInfo.y, imgInfo.w, imgInfo.h, 0, 0, imgInfo.w, imgInfo.h);
 					img.onload = function() {
 						aa(img);
 						img.onload = null;
-						ab(img, "visibility", "visible")
+						E8(img, "visibility", "visible")
 					};
 					img.src = canvas.toDataURL("image/png")
 				});
-				return Y(img, {
+				return E9(img, {
 					css: {
-						width: ab.px(halfW),
-						height: ab.px(halfH)
+						width: E8.px(halfW),
+						height: E8.px(halfH)
 					},
 					ps: {
 						width: halfW,
@@ -1952,33 +2024,34 @@
 				})
 			}
 		}();
-		S.center = function(ag) {
-			var p = S(ag),
+		Icon.center = function(ag) {
+			var p = Icon(ag),
 				af = p.ps;
-			ab(p, U.cssCenter(af.width, af.height));
+			E8(p, E16.cssCenter(af.width, af.height));
 			return p
 		};
 
-		function V(ag, p, ah) {
+		function Canvas(ag, p, ah) {
 			var af = document.createElement("canvas"),
 				ai = af.context = af.getContext("2d");
 			ah = af.dpr = ah || (window.devicePixelRatio || 1) / (ai.webkitBackingStorePixelRatio || ai.mozBackingStorePixelRatio || ai.msBackingStorePixelRatio || ai.oBackingStorePixelRatio || ai.backingStorePixelRatio || 1);
 			af.width = ag * ah;
 			af.height = p * ah;
-			ab(af, {
+			E8(af, {
 				display: "block",
-				width: ab.px(af.logicalWidth = ag),
-				height: ab.px(af.logicalHeight = p)
+				width: E8.px(af.logicalWidth = ag),
+				height: E8.px(af.logicalHeight = p)
 			});
 			ai.scale(ah, ah);
 			return af
 		}
 		E["17"] = Z;
-		Z.load = ad;
-		Z.Canvas = V;
-		Z.Icon = S;
-		Z.staticSrc = getImageSrc
+		Z.load = load;
+		Z.Canvas = Canvas;
+		Z.Icon = Icon;
+		Z.staticSrc = getImageSrc;
 	});
+        
 	E(function() {
 		var X = E["9"],
 			ab = E["8"],

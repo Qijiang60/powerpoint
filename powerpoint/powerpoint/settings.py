@@ -36,7 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ppt'
+    'ppt',
+    'nested_inline'
 )
 
 MIDDLEWARE_CLASSES = (

@@ -28,7 +28,7 @@ class PowerPointAdmin(admin.ModelAdmin):
            j = 0
            while j < 9:
                if request.POST['page_set-' + str(i) + '-img' + str(j + 1)]:
-                   image = {"imageinfo":{"x":0,"y":0,"width":320,"height":504,"maskRadius":0.0,"type":"image","borderWidth":0}}
+                   image = {"url":None,"originurl":None,"images":None,"arrow":"","imageinfo":{"x":35,"y":61,"width":251,"height":381,"rotate":None,"animation":None,"maskRadius":0.0,"animation-delay":None,"animation-duration":None,"type":None,"borderWidth":0,"borderColor":None,"diretion":None,"alignX":None,"alignY":None,"opacity":None},"mask":None,"frame":None}
                    image['url'] = request.POST['page_set-' + str(i) + '-img' + str(j + 1)]
                    page['layout']['image'].insert(j, image)
                j += 1

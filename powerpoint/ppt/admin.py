@@ -1,18 +1,49 @@
 #coding:utf-8
 import logging
 import string
+import uuid
 from django.contrib import admin
+from django import forms
 from ppt.models import PowerPoint, Page
 from ppt.tools import writeJsonp 
 from ppt.imageinfo import imageinfo
 
+def getPowerPointForm(uutoken):
+    class PowerPointForm(forms.ModelForm):
+        token = forms.CharField(
+             label='页面标识',
+             widget=forms.TextInput(attrs={'readonly':'readonly'}),
+             initial=uutoken
+        )
+
+        class Meta:
+            model = PowerPoint
+
+    return PowerPointForm
+
 class PageInline(admin.StackedInline):
-    model = Page
-    extra = 1
+   model = Page
+   extra = 1
 
 class PowerPointAdmin(admin.ModelAdmin):
-#   readonly_fields = ('token',)
+#  readonly_fields = ('token',)
+   logger = logging.getLogger("powerpoint")
    inlines = [PageInline]  
+# form = PowerPointForm
+#  logger.info("formtoken")
+#   logger.info(form['token'].value())
+#   def get_readonly_fields(self, request, obj=None):
+#      logger = logging.getLogger("powerpoint")
+#      logger.info("getreadonlyfields")
+#      if obj and obj.token:
+#          logger.info("objtoken")
+#          logger.info(obj.token)    
+#      return self.readonly_fields + ('token',)
+
+   def get_form(self, request, obj=None, **kwargs):
+        self.logger.info("getform")
+
+        return getPowerPointForm(str(uuid.uuid1()).replace('-','_'))
 
    def save_model(self,  request, obj, form, change):
        logger = logging.getLogger("powerpoint")

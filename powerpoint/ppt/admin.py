@@ -5,7 +5,7 @@ import uuid
 from django.contrib import admin
 from django import forms
 from ppt.models import PowerPoint, Page
-from ppt.tools import writeJsonp 
+from ppt.tools import writeJsonp, text2img 
 from ppt.imageinfo import imageinfo
 
 def getPowerPointForm(uutoken):
@@ -47,6 +47,8 @@ class PowerPointAdmin(admin.ModelAdmin):
 
    def save_model(self,  request, obj, form, change):
        logger = logging.getLogger("powerpoint")
+       logger.info("request:")
+       logger.info(request.POST)
        page_dict = {"code":200,"data":{"thumbnail":None,"description":"每一页,都美若人生初见.","mode":"push","pageSwitch":{"animateId":"default"},"backgroud":{"color":None},"music":{"src":None},"author":"Mr. Chen","headimgurl":"http://wx.qlogo.cn/mmopen/iajwTFkyW3R5gpRtAia2TkQpVKcBTWFjxjWqP06FIsTILVdzqNECHUQ52lDKevlJxe2nTiaGzaf40HCsFvLibuWtrqAXXnDib8SpA/0","userworks":None,"copyright":1,"praise":0,"theme":None,"uid":1499404}}
        pages = []
        i = 0
@@ -69,13 +71,27 @@ class PowerPointAdmin(admin.ModelAdmin):
                page['layout']['image'].insert(0, image)
            else:
                j = 0
+               k = 0
+               imgcount = 0
                while j < 9:
-                   if request.POST['page_set-' + str(i) + '-img' + str(j + 1)]:
+                   img = request.POST['page_set-' + str(i) + '-img' + str(j + 1)]
+                   if img:
                        image = {"url":None,"originurl":None,"images":None,"arrow":"","imageinfo":None,"mask":None,"frame":None}
-                       image['url'] = request.POST['page_set-' + str(i) + '-img' + str(j + 1)]
+                       image['url'] = img
                        image['imageinfo'] = imageinfo[page['layout']['label']][j]
                        page['layout']['image'].insert(j, image)
+                       imgcount += 1
                    j += 1
+               while k < 9:
+                   text = request.POST['page_set-' + str(i) + '-text' + str(k + 1)]
+                   if text:
+                       image = {"url":None,"originurl":None,"images":None,"arrow":"","imageinfo":None,"mask":None,"frame":None}
+                       image['url'] = text2img(text)
+                       image['imageinfo'] = imageinfo[page['layout']['label']][imgcount]
+                       page['layout']['image'].insert(imgcount, image)
+                       imgcount += 1
+                   k += 1
+
            pages.insert(i, page)
            i += 1
 

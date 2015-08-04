@@ -30,6 +30,16 @@ class Page(models.Model):
     img7 = models.CharField(u'图片7地址',max_length=200,blank=True,null=True)
     img8 = models.CharField(u'图片8地址',max_length=200,blank=True,null=True)
     img9 = models.CharField(u'图片9地址',max_length=200,blank=True,null=True)
+    text1 = models.CharField(u'文案1',max_length=200,blank=True,null=True)
+    text2 = models.CharField(u'文案2',max_length=200,blank=True,null=True)
+    text3 = models.CharField(u'文案2',max_length=200,blank=True,null=True)
+    text4 = models.CharField(u'文案2',max_length=200,blank=True,null=True)
+    text5 = models.CharField(u'文案2',max_length=200,blank=True,null=True)
+    text6 = models.CharField(u'文案2',max_length=200,blank=True,null=True)
+    text7 = models.CharField(u'文案2',max_length=200,blank=True,null=True)
+    text8 = models.CharField(u'文案2',max_length=200,blank=True,null=True)
+    text9 = models.CharField(u'文案2',max_length=200,blank=True,null=True)
+
     powerpoint = models.ForeignKey(PowerPoint)
 
     create_timestamp = models.DateTimeField(u'创建时间',auto_now_add=True)

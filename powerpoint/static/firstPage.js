@@ -12,7 +12,209 @@
             },
             N = f;
 	var P = arguments.callee; //最外层匿名函数本身
-	var n = {   //各资源对应所在sprite的位置
+            
+        var n = {
+            "arrow/mi01": {
+                x: 0,
+                y: 0,
+                w: 40,
+                h: 64
+            },
+            "arrow/mi04": {
+                x: 0,
+                y: 68,
+                w: 28,
+                h: 44
+            },
+            "author/create": {
+                x: 0,
+                y: 0,
+                w: 600,
+                h: 100
+            },
+            "author/create-active": {
+                x: 0,
+                y: 0,
+                w: 600,
+                h: 100
+            },
+            "author/follow": {
+                x: 0,
+                y: 0,
+                w: 1,
+                h: 1
+            },
+            "author/following": {
+                x: 0,
+                y: 0,
+                w: 1,
+                h: 1
+            },
+            "contact/frame": {
+                x: 0,
+                y: 0,
+                w: 470,
+                h: 90
+            },
+            "contact/title": {
+                x: 0,
+                y: 94,
+                w: 470,
+                h: 107
+            },
+            "following/back": {
+                x: 62,
+                y: 156,
+                w: 24,
+                h: 38
+            },
+            "following/download": {
+                x: 0,
+                y: 78,
+                w: 348,
+                h: 74
+            },
+            "following/download-active": {
+                x: 0,
+                y: 0,
+                w: 348,
+                h: 74
+            },
+            "following/ok": {
+                x: 0,
+                y: 156,
+                w: 58,
+                h: 58
+            },
+            "image-not-found": {
+                x: 0,
+                y: 494,
+                w: 365,
+                h: 145
+            },
+            "loading-c": {
+                x: 158,
+                y: 746,
+                w: 68,
+                h: 68
+            },
+            "loading-new-page": {
+                x: 370,
+                y: 586,
+                w: 40,
+                h: 40
+            },
+            "loading-o": {
+                x: 86,
+                y: 746,
+                w: 68,
+                h: 68
+            },
+            "map/back": {
+                x: 0,
+                y: 82,
+                w: 18,
+                h: 31
+            },
+            "map/location": {
+                x: 0,
+                y: 0,
+                w: 74,
+                h: 78
+            },
+            music: {
+                x: 370,
+                y: 542,
+                w: 39,
+                h: 39
+            },
+            "page-error": {
+                x: 0,
+                y: 0,
+                w: 430,
+                h: 490
+            },
+            "powered-by": {
+                x: 0,
+                y: 698,
+                w: 210,
+                h: 44
+            },
+            "razzies/banner-center": {
+                x: 0,
+                y: 152,
+                w: 20,
+                h: 72
+            },
+            "razzies/banner-left": {
+                x: 0,
+                y: 0,
+                w: 40,
+                h: 72
+            },
+            "razzies/banner-right": {
+                x: 0,
+                y: 76,
+                w: 40,
+                h: 72
+            },
+            "refresh-arrow": {
+                x: 370,
+                y: 494,
+                w: 44,
+                h: 44
+            },
+            "signup/close": {
+                x: 0,
+                y: 0,
+                w: 39,
+                h: 39
+            },
+            "signup/star": {
+                x: 0,
+                y: 44,
+                w: 9,
+                h: 9
+            },
+            "tips-click-first": {
+                x: 0,
+                y: 746,
+                w: 82,
+                h: 82
+            },
+            "tips-push": {
+                x: 396,
+                y: 644,
+                w: 34,
+                h: 34
+            },
+            "tips-push-first": {
+                x: 264,
+                y: 644,
+                w: 127,
+                h: 230
+            },
+            "tips-scratch": {
+                x: 0,
+                y: 644,
+                w: 260,
+                h: 50
+            },
+            "video/close": {
+                x: 0,
+                y: 136,
+                w: 50,
+                h: 50
+            },
+            "video/play": {
+                x: 0,
+                y: 0,
+                w: 132,
+                h: 132
+            }
+        };
+    /*
+    var n = {   //各资源对应所在sprite的位置
 		"image-not-found": {
 			x: 0,
 			y: 494,
@@ -211,10 +413,10 @@
 			w: 132,
 			h: 132
 		}
-	};
+	};*/
 	var a = '*{padding:0;margin:0;outline:0;border:0;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-text-size-adjust:none;-webkit-touch-callout:none;-webkit-user-select:none}input,textarea{-webkit-user-select:text}.hidden{visibility:hidden}.lock{pointer-events:none !important}.lock *{pointer-events:none !important}.scroll{overflow-y:scroll}.win32 .scroll{overflow-y:auto}.ios .scroll{-webkit-overflow-scrolling:touch}.ios .scroll>*{-webkit-transform:translateZ(0)}.animation-prepare *{-webkit-animation-play-state:paused !important;animation-play-state:paused !important}.msg-box{position:absolute;left:60px;right:60px;text-align:center;z-index:100000;visibility:hidden}.msg-box .msg{display:inline-block;opacity:0;font-size:12px;color:white;line-height:18px;padding:9px 15px;border-radius:5px;background-color:rgba(0,0,0,0.8);text-align:left}.msg-box.show{visibility:visible}.msg-box.show .msg{opacity:1}.msg-box.remove .msg{opacity:0;-webkit-transition:.15s}.tips{transition:.4s}.hide-tips .tips{-webkit-animation:none !important;transition:none;opacity:0}.hide-tips-fade .tips{-webkit-animation:none !important;opacity:0}.powered-by{-webkit-transition:.3s;-webkit-transform:translate3d(0,100%,0)}.last-page .powered-by{-webkit-transform:none}.last-page .tips.switch{-webkit-animation:none !important;opacity:0}.layout img{pointer-events:none}.win32 .layout img{pointer-events:auto}.map-slide-page{background:white}.map-slide-page .title-bar{position:absolute;left:10px;top:10px;width:143px;height:38px;background-color:rgba(0,0,0,0.8);box-shadow:0 0 1px 0 rgba(0,0,0,0.6);z-index:1000}.map-slide-page .title-bar .back{position:absolute;width:49px;left:0;top:0;bottom:0}.map-slide-page .title-bar .line{position:absolute;left:49px;width:1px;top:0;bottom:0;background-color:#000;box-shadow:1px 0 rgba(113,113,113,.75)}.map-slide-page .title-bar .caption{position:absolute;left:50px;right:0;top:0;bottom:0;text-align:center;line-height:38px;font-size:16px;color:#e7e7e7;letter-spacing:2px}.map-slide-page .title-bar .caption:after{content:"地图"}.map-info-window .name{font-size:16px;font-weight:bold;line-height:22px;padding-bottom:6px;margin-bottom:0;width:220px}.map-info-window div{font-size:12px;line-height:16px;vertical-align:top}.map-info-window span{margin-left:5px;display:inline-block;width:184px;vertical-align:top}.BMap_Marker img{width:100%}.sign-up-form-slide-page{background:rgba(255,255,255,0.96)}.sign-up-form-slide-page .page-content{padding:0 25px}.sign-up-form-slide-page .page-content:before{display:block;content:"请您填写报名表单，谢谢您的参与！";color:#99a2a7;font-size:12px;line-height:12px;margin-top:27px}.sign-up-form-slide-page .back{position:absolute;height:18px;width:18px;right:7px;top:7px}.sign-up-form-slide-page .back:before{position:absolute;content:"";display:block;left:-23px;right:-7px;top:-7px;bottom:-23px}.sign-up-form-slide-page .back:after{width:18px;height:18px}.sign-up-form-slide-page label{position:relative;margin:13px 0;display:block}.sign-up-form-slide-page label:first-child{margin-top:21px}.sign-up-form-slide-page label:last-child{margin-top:21px}.sign-up-form-slide-page .caption{font-size:15px;line-height:15px;color:#4f5356}.sign-up-form-slide-page input{height:39px;margin-top:6px;font-size:15px;line-height:37px;width:100%;border:1px solid #4f5356;padding:0 9px;box-sizing:border-box;background:transparent}.sign-up-form-slide-page input.error{border:1px solid #fc7a89}.sign-up-form-slide-page .required{position:relative;display:inline-block;width:5px;height:5px;vertical-align:top}.sign-up-form-slide-page .required:after{background-position:-20px -20px;width:100%;height:100%}.sign-up-form-slide-page .button{width:115px;height:38px;line-height:38px;font-size:15px;margin:0 auto;background:#fa6143;color:white;text-align:center;border-radius:3px}';
-/*	
-        window.Icon = function(imageName) {
+	
+   /*     window.Icon = function(imageName) {
             var imageSourceMap = {  //图标url
                 "image-not-found": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
 		"loading-c": "http://lianaibiji-admin.u.qiniudn.com/wsworks/shop/Snack%20canteen/Load.png",
@@ -272,7 +474,7 @@
             
             return img;
         };
-  */      
+        */
     E(function() { //创建第一个函数集：函数调用集合
         function loopExecFn(X, W, V) {   //两个参数时，传入的是上限，和执行函数，初始值默认为0，三个参数时，传入的是初始值，上限和调用函数。在指定范围内循环执行函数，无返回值
                 var Z, U, Y;
@@ -1905,6 +2107,10 @@
 		}
 
 		function getImageSrc(p) {
+                        if (p === "icon.png") return '/static/images/icon.png';
+
+                        if (p === "icon-author.png") return 'http://hello.lianaibiji.com/wheretodata/style_tab_v2.png';
+                            
 			return window.contentPath + "image/" + p
 		}
 
@@ -2764,20 +2970,21 @@
 		}
 
 		function T() {
-			if (G.chuye) {
-				B("您正在使用初页")
-			} else {
-				w.track(["Download", "Click", S]);
-				if (G.android) {
-					location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.cloud7.firstpage"
-				} else {
-					if (G.ios) {
-						location.href = G.MicroMessenger ? "http://a.app.qq.com/o/simple.jsp?pkgname=com.cloud7.firstpage" : "https://itunes.apple.com/cn/app/chu-ye/id910560238?mt=8"
-					} else {
-						U.jump("http://www.cloud7.com.cn/chuye")
-					}
-				}
-			}
+//			if (G.chuye) {
+//				B("您正在使用初页")
+//			} else {
+//				w.track(["Download", "Click", S]);
+//				if (G.android) {
+//					location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.cloud7.firstpage"
+//				} else {
+//					if (G.ios) {
+//						location.href = G.MicroMessenger ? "http://a.app.qq.com/o/simple.jsp?pkgname=com.cloud7.firstpage" : "https://itunes.apple.com/cn/app/chu-ye/id910560238?mt=8"
+//					} else {
+//						U.jump("http://www.cloud7.com.cn/chuye")
+//					}
+//				}
+//			}
+                        window.location.href="http://www.lianaibiji.com/company/download?c=lianaibijishu";
 		}
 		E["21"].downloadFirstPage = T
 	});
@@ -3798,6 +4005,7 @@
 								position: aE(aw.position, "")
 							}), au, az)
 						} catch (aF) {
+                                                    alert(aF)
 							aG = ac();
 							var aB = aG.wrapper,
 								ay = aq.ps,
@@ -7176,11 +7384,26 @@
 				following: "author/following"
 			},
 			create: function(ap, aj, ak) {
+//                                    R(ak.create, {
+//					css: {
+//						width: Y.px(320 * 568 / 480),
+//						height: Y.px(50 * 568 /480)
+//					}
+//                                    });
+                                ak.create['halfWidth'] = 320 * 568 / 480;
+                                ak.create['halfHeight'] = 50 * 568 /480;
+                                
+                                ak.createActive['halfWidth'] = 320 * 568 / 480;
+                                ak.createActive['halfHeight'] = 50 * 568 /480;
+                            
 				var am = aj.data(),
 					av = Math.max(14 * O << 0, 12);
 
 				function ao(ax, aw) {
 					return I.layImage(I.transformY, ax, aw, ap)
+                                        
+                                        
+                                       // return I.layImage(I.transformCover, ax, aw, ap)
 				}
 
 				function au(ay, az, ax) {
@@ -7193,8 +7416,8 @@
 					aw.y = az * O
 				}
 				ap.background = "white";
-				au("作", 194 / 2, "#989898");
-				au("者", 234 / 2, "#989898");
+			//	au("恋爱记", 194 / 2, "#989898");
+			//	au("", 234 / 2, "#989898");
 				au(am.author, 561 / 2);
 				var aq = 144 / 2 * O << 0,
 					at = l(g.Border(g.ImageCover(aj.image(0), aq, aq), {
@@ -7222,13 +7445,21 @@
 					}
 				}
 				var an = ao(ak.create, {
-					y: 925 / 2,
-					alignX: 0.5
+					//y: 925 / 2,
+					//alignX: 0.5
+                                        y : 518,
+                                        alignX: 0
 				}),
 					ar = ao(ak.createActive, {
-						y: 925 / 2,
-						alignX: 0.5
+						//y: 925 / 2,
+						//alignX: 0.5
+                                                y : 518,
+                                                alignX: 0
 					});
+                                        
+                                  
+                                  
+                                        
 				ar.visible = false;
 				ad(an.element, function() {
 					an.visible = false;

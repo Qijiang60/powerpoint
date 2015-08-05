@@ -1,5 +1,5 @@
 #coding:utf-8
-
+import codecs
 import os
 import logging
 import json
@@ -11,9 +11,13 @@ def writeJsonp(source_name, document_dict):
     logger = logging.getLogger("powerpoint")
     logger.info(settings.STATICFILES_DIRS)
     datafile = os.path.join(settings.STATICFILES_DIRS[0], 'workData/%s.js' % source_name)
-    fileHandler = open(datafile, 'w')
+    fileHandler = codecs.open(datafile, 'w', 'utf-8')
     datachunk = json.dumps(document_dict)
-    fileHandler.write("window.workData = %s" % datachunk)
+    str2write = "window.workData = %s" % datachunk
+    logger.info(str2write)
+    code = "#coding:utf-8\nfileHandler.write(u'" + str2write + "')"
+# fileHandler.write(str2write)
+    exec code
     fileHandler.close()
 
 

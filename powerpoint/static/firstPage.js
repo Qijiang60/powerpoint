@@ -7390,11 +7390,11 @@
 //						height: Y.px(50 * 568 /480)
 //					}
 //                                    });
-                                ak.create['halfWidth'] = 320 * 568 / 480;
-                                ak.create['halfHeight'] = 50 * 568 /480;
+                                ak.create['halfWidth'] = document.documentElement.clientWidth * 568 / document.documentElement.clientHeight;
+                                ak.create['halfHeight'] = 50 * 568 /document.documentElement.clientHeight;
                                 
-                                ak.createActive['halfWidth'] = 320 * 568 / 480;
-                                ak.createActive['halfHeight'] = 50 * 568 /480;
+                                ak.createActive['halfWidth'] = document.documentElement.clientWidth * 568 / document.documentElement.clientHeight;
+                                ak.createActive['halfHeight'] = 50 * 568 /document.documentElement.clientHeight;
                             
 				var am = aj.data(),
 					av = Math.max(14 * O << 0, 12);
@@ -7447,13 +7447,13 @@
 				var an = ao(ak.create, {
 					//y: 925 / 2,
 					//alignX: 0.5
-                                        y : 518,
+                                        y : (document.documentElement.clientHeight - 50) * 568 / document.documentElement.clientHeight,
                                         alignX: 0
 				}),
 					ar = ao(ak.createActive, {
 						//y: 925 / 2,
 						//alignX: 0.5
-                                                y : 518,
+                                                y : (document.documentElement.clientHeight - 50) * 568 / document.documentElement.clientHeight,
                                                 alignX: 0
 					});
                                         

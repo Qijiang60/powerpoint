@@ -5,7 +5,7 @@ from django.db import models
 class PowerPoint(models.Model):
     token = models.CharField(u'页面标识',max_length=50,db_index=True)
     title = models.CharField(u'页面标题',max_length=50)
-    background = models.CharField(u'背景颜色',max_length=50,default='#000000')
+    background = models.CharField(u'背景颜色',max_length=50,blank=True,null=True)
     music = models.CharField(u'背景音乐',max_length=200,blank=True,null=True)
     create_timestamp = models.DateTimeField(u'创建时间',auto_now_add=True)
     last_update_timestamp = models.DateTimeField(u'更新时间',auto_now=True)

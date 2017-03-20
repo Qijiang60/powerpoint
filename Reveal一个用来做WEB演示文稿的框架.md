@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Reveal.js一个用来做WEB演示文稿的框架_Helloweba</title>
+http://www.helloweba.com/view-blog-378.html
 <meta name="keywords" content="幻灯片,WEB前端开发,Javascript,Ajax,jQuery插件,移动端WEB开发">
 <meta name="description" content="reveal.js是一个能够帮助我们很轻易地使用HTML来创建漂亮的演示效果，也就是我们常见的PPT幻灯片。reveal.js不依赖其他任何javascript库，是一个独立的javascript插件库。它提供了多种幻灯片过渡效果，是一个非常棒的在线演示库。" />
 <meta name="author" content="月光光">

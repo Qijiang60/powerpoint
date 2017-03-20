@@ -1,0 +1,505 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>把PPT放入浏览器中——12款用于演示的JS库 - Web前端 - ITeye资讯</title>
+    <meta name="description" content="会议、演讲离不开幻灯片，它可以有效地辅助演讲者进行表达。目前一些流行的工具，比如Windows平台上的PowerPoint、Mac平台上的Keynote等工具，使得幻灯片的制作变得简单。但是这些幻灯片取决于特定的工具才能演示，且不利于传播。 随着HTML5技术的发展，现在JavaScirpt也可以用来制作幻灯片，直接使用浏览器就可以播放，这样你只需给别人发一个链接即可。 如果你自己采用JavaSci ..." />
+    <meta name="keywords" content="JavaScript, 库, 演示, 幻灯片,web,Web前端" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/open_search.xml" title="ITeye" />
+    <link href="http://www.iteye.com/stylesheets/news.css?1480562782" media="screen" rel="stylesheet" type="text/css" />
+    <script src="http://www.iteye.com/javascripts/application.js?1448702469" type="text/javascript"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-535605-1']);
+  _gaq.push(['_setDomainName', 'iteye.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      <link href="http://www.iteye.com/javascripts/syntaxhighlighter/SyntaxHighlighter.css?1448702469" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://www.iteye.com/javascripts/syntaxhighlighter/shCoreCommon.js?1448702469" type="text/javascript"></script>
+<script src="http://www.iteye.com/javascripts/hotkey.js?1448702469" type="text/javascript"></script>
+<script src="http://www.iteye.com/javascripts/weiboshare.js?1448702469" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div class="clearfix"><div id="user_nav">
+      <a href="/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="/login">登录</a>
+    <a href="/signup" class="nobg">注册</a>
+  </div>
+</div>
+        <div class="clearfix">
+          <div id="branding">
+            <a href="http://www.iteye.com"><img alt="ITeye3.0" src="http://www.iteye.com/images/logo.gif?1448702469" title="ITeye-最棒的软件开发交流社区" /></a>
+          </div>
+          <div id="gg">
+          	<ins data-revive-zoneid="162" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+          </div>
+        </div>
+      </div>
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+
+<div class="h-entry" style='display:none'>
+  <a href="http://wangguo.iteye.com" class="p-author" target="_blank">wangguo</a>
+</div>
+
+
+<div class="crumbs" style="margin:10px 0;">
+  <a href="/news">资讯频道</a> <span class="arrow">&rarr;</span>
+  <a href="/news/category/web">Web前端</a>
+</div>
+
+<div class="news_main">
+  <div class="news">
+    <div class="clearfix">
+      <div class="news_digg">
+        <div class='digg' id='d28756'><h3 class='digged'><span class='digg'>6顶</span><br/><span class='bury'>0踩</span></h3></div>
+      </div>
+      <div id="news_icon"><a href="/news/category/web" title="查看Web前端分类资讯" target="_blank"><img alt="Web前端" src="http://www.iteye.com/images/icon/whole_category/web.gif?1448702469" /></a></div>
+      <div class="title">
+        <h3>
+          <img alt="原创新闻" src="http://www.iteye.com/images/news/ori.gif?1448702469" />
+          <a href='/news/28756' title="把PPT放入浏览器中——12款用于演示的JS库">把PPT放入浏览器中——12款用于演示的JS库</a>
+          <span class="actions">
+            
+            
+          </span>
+        </h3>
+        <div class="news_info" style="background-color: transparent;">
+          <span class='date'>2014-02-11 17:01</span> by 副主编 <a href='http://wangguo.iteye.com' target='_blank' title='wangguo'>wangguo</a>
+          <span class="comment"><a href="#comments">评论(6)</a></span>
+          <span class='view'>有55606人浏览</span>
+          
+        </div>
+        <div class="news_tag">
+                      <a href="/news/tag/JavaScript"><span>JavaScript</span></a>
+                      <a href="/news/tag/%E5%BA%93"><span>库</span></a>
+                      <a href="/news/tag/%E6%BC%94%E7%A4%BA"><span>演示</span></a>
+                      <a href="/news/tag/%E5%B9%BB%E7%81%AF%E7%89%87"><span>幻灯片</span></a>
+                  </div>
+      </div>
+    </div>
+        
+    <h4 class='copyright'>声明：ITeye资讯文章的版权属于ITeye网站所有，严禁任何网站转载本文，否则必将追究法律责任！</h4>   
+			    
+  		
+<div class="newfors">
+  <em>相关知识库：</em>
+  
+  <a target="_blank" href="http://lib.csdn.net/base/javascript">
+  	<img src="http://img.knowledge.csdn.net/upload/base/1458106113412_412.jpg" width="30" height="30" alt=""  class="imgradius">
+    <span >JavaScript知识库</span>
+  </a>
+  
+  <a target="_blank" href="http://lib.csdn.net/base/jquery">
+  	<img src="http://img.knowledge.csdn.net/upload/base/1459143634568_568.jpg" width="30" height="30" alt=""  class="imgradius">
+    <span >jQuery知识库</span>
+  </a>
+  
+  <a target="_blank" href="http://lib.csdn.net/base/angularjs">
+  	<img src="http://img.knowledge.csdn.net/upload/base/1458526868366_366.jpg" width="30" height="30" alt=""  class="imgradius">
+    <span >AngularJS知识库</span>
+  </a>
+  </div>
+
+        
+    <div id="news_content">
+      会议、演讲离不开幻灯片，它可以有效地辅助演讲者进行表达。目前一些流行的工具，比如Windows平台上的PowerPoint、Mac平台上的Keynote等工具，使得幻灯片的制作变得简单。但是这些幻灯片取决于特定的工具才能演示，且不利于传播。
+<br />
+<br />随着HTML5技术的发展，现在JavaScirpt也可以用来制作幻灯片，直接使用浏览器就可以播放，这样你只需给别人发一个链接即可。
+<br />
+<br />如果你自己采用JavaScirpt来实现各种幻灯片效果，这是非常繁琐的。本文为你带来12款用于制作幻灯片的JavaScript库，可以使你的工作大大简化。
+<br />
+<br /><strong>1.&nbsp; Deck.js</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7545/2a5d6032-5a63-320e-ad23-a404b5deb2cf.png" /></div>
+<br />
+<br /><a href="http://imakewebthings.com/deck.js/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="http://github.com/imakewebthings/deck.js" target="_blank">源码</a>
+<br />
+<br /><strong>2.&nbsp; Tacion.js</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7547/526e9c4b-a610-35f9-b89f-bbc86b3cfc7d.png" /></div>
+<br />
+<br /><a href="http://azoff.github.io/tacion.js/examples/spain.js/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="http://azoff.github.io/tacion.js/" target="_blank">源码</a>
+<br />
+<br /><strong>3.&nbsp; Fathom.js</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7549/19e6959f-9460-3613-955f-374ccb148843.png" /></div>
+<br />
+<br /><a href="http://markdalgleish.com/presentations/jquerymobile" target="_blank">演示</a>&nbsp; /&nbsp; <a href="http://markdalgleish.com/projects/fathom/" target="_blank">源码</a>
+<br />
+<br /><strong>4.&nbsp; Impress.js</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7551/32e8f1dd-78e0-3bee-8fc5-599fc6f2773e.png" /></div>
+<br />
+<br /><a href="http://bartaz.github.io/impress.js/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="https://github.com/bartaz/impress.js/" target="_blank">源码</a>
+<br />
+<br /><strong>5.&nbsp; Reveal.js</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7553/a80b7fbe-eb95-3bd4-b459-8c4d2dca8235.png" /></div>
+<br />
+<br /><a href="http://lab.hakim.se/reveal-js/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="https://github.com/hakimel/reveal.js" target="_blank">源码</a>
+<br />
+<br /><strong>6.&nbsp; Presenteer.js</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7555/fe0352d1-742e-35f1-97d8-2dc5e891fac9.png" /></div>
+<br />
+<br /><a href="http://willemmulder.github.com/Presenteer.js/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="https://github.com/willemmulder/Presenteer.js" target="_blank">源码</a>
+<br />
+<br /><strong>7.&nbsp; Jmpress.js</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7557/418bdc27-5686-3fff-9d01-01798580b00e.png" /></div>
+<br />
+<br /><a href="http://jmpressjs.github.io/jmpress.js/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="http://github.com/jmpressjs/jmpress.js" target="_blank">源码</a>
+<br />
+<br /><strong>8.&nbsp; DZ Slides</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7559/6ca94932-0e19-3027-a802-9bf20fe6d544.png" /></div>
+<br />
+<br /><a href="http://paulrouget.com/dzslides/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="https://github.com/paulrouget/dzslides" target="_blank">源码</a>
+<br />
+<br /><strong>9.&nbsp; slides</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7561/4d8e654b-22e1-3da4-bd9d-3afaf08523e2.png" /></div>
+<br />
+<br /><a href="http://www.briancavalier.com/code/slides/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="https://github.com/briancavalier/slides" target="_blank">源码</a>
+<br />
+<br /><strong>10.&nbsp; Slides Google Code</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7563/114a3315-7c04-38cd-a258-04d3b200d89f.png" /></div>
+<br />
+<br /><a href="http://io-2012-slides.googlecode.com/git/template.html" target="_blank">演示</a>&nbsp; /&nbsp; <a href="http://io-2012-slides.googlecode.com/git/" target="_blank">源码</a>
+<br />
+<br /><strong>11.&nbsp; Perkele.js</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7565/805c5714-977b-30c8-8d92-b37aff59f5d6.png" /></div>
+<br />
+<br /><a href="http://kpuputti.github.io/perkele.js/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="https://github.com/kpuputti/perkele.js" target="_blank">源码</a>
+<br />
+<br /><strong>12.&nbsp; HTML Slidy</strong>
+<br />
+<br /><div style="text-align: center;"><img src="http://dl2.iteye.com/upload/attachment/0093/7567/23d0ae9b-8464-3d4a-9f54-b95dc861c1d6.png" /></div>
+<br />
+<br /><a href="http://www.w3.org/Talks/Tools/Slidy2/" target="_blank">演示</a>&nbsp; /&nbsp; <a href="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js" target="_blank">源码</a>
+<br />
+<br />Via <a href="http://designzum.com/2014/02/07/best-javascript-html5-presentation-frameworks/" target="_blank">designzum</a>
+    </div>
+
+    <div id="news_recommended_n2">
+    	<ins data-revive-zoneid="163" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+		</div>
+
+    
+  <div class="attachments">
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7545/2a5d6032-5a63-320e-ad23-a404b5deb2cf.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7545/2a5d6032-5a63-320e-ad23-a404b5deb2cf-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 64.1 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7547/526e9c4b-a610-35f9-b89f-bbc86b3cfc7d.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7547/526e9c4b-a610-35f9-b89f-bbc86b3cfc7d-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 43.2 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7549/19e6959f-9460-3613-955f-374ccb148843.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7549/19e6959f-9460-3613-955f-374ccb148843-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 102.9 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7551/32e8f1dd-78e0-3bee-8fc5-599fc6f2773e.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7551/32e8f1dd-78e0-3bee-8fc5-599fc6f2773e-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 94 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7553/a80b7fbe-eb95-3bd4-b459-8c4d2dca8235.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7553/a80b7fbe-eb95-3bd4-b459-8c4d2dca8235-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 124.9 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7555/fe0352d1-742e-35f1-97d8-2dc5e891fac9.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7555/fe0352d1-742e-35f1-97d8-2dc5e891fac9-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 31.6 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7557/418bdc27-5686-3fff-9d01-01798580b00e.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7557/418bdc27-5686-3fff-9d01-01798580b00e-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 50.5 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7559/6ca94932-0e19-3027-a802-9bf20fe6d544.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7559/6ca94932-0e19-3027-a802-9bf20fe6d544-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 38.3 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7561/4d8e654b-22e1-3da4-bd9d-3afaf08523e2.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7561/4d8e654b-22e1-3da4-bd9d-3afaf08523e2-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 35.8 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7563/114a3315-7c04-38cd-a258-04d3b200d89f.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7563/114a3315-7c04-38cd-a258-04d3b200d89f-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 27.7 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7565/805c5714-977b-30c8-8d92-b37aff59f5d6.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7565/805c5714-977b-30c8-8d92-b37aff59f5d6-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 33.9 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0093/7567/23d0ae9b-8464-3d4a-9f54-b95dc861c1d6.png" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0093/7567/23d0ae9b-8464-3d4a-9f54-b95dc861c1d6-thumb.png' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 84.3 KB</li>
+        </ul>
+      
+    
+    
+      <ul>
+        <li><a href="#" onclick="$$('div.attachments ul').invoke('show');$(this).up(1).hide();return false;">查看图片附件</a></li>
+      </ul>
+    
+  </div>
+
+
+
+    <div>
+          </div>
+  </div>
+
+        <div id="digg_bottom" class="clearfix">
+      <div class="share_weibo">分享到：
+      <a data-type='sina' href="javascript:;" title="分享到新浪微博"><img src="/images/sina.jpg"></a>
+      <a data-type='qq' href="javascript:;" title="分享到腾讯微博"><img src="/images/tec.jpg"></a>
+      </div>
+<div class='digged'><strong>6</strong> <br/>顶</div><div class='digged'><strong>0</strong> <br/>踩</div></div>
+
+  <div class="comments">
+    <span style="font-weight:bold; font-size:16px;margin-right:14px;">评论</span> 共 6 条  请<a href="/login">登录</a>后发表评论 
+    <a id="comments" name="comments"></a>
+    <div id='nc137577'>
+  <h5>6 楼 <a href='http://caoboin2007.iteye.com' target='_blank' title='caoboin2007'>caoboin2007</a> 2014-12-30 23:46  </h5>
+  <div>看了看第一个deck.js，可以代替PPT了</div>
+</div>
+<div id='nc134262'>
+  <h5>5 楼 <a href='http://sealv.iteye.com' target='_blank' title='sealv'>sealv</a> 2014-03-11 12:51  </h5>
+  <div><img src="/images/smiles/icon_idea.gif" />&nbsp;<img src="/images/smiles/icon_idea.gif" />&nbsp;<img src="/images/smiles/icon_idea.gif" /> </div>
+</div>
+<div id='nc133944'>
+  <h5>4 楼 <a href='http://zxdong2008-sina-com.iteye.com' target='_blank' title='果0o冻'>果0o冻</a> 2014-02-17 08:50  </h5>
+  <div>非常好，支持下。</div>
+</div>
+<div id='nc133907'>
+  <h5>3 楼 <a href='http://beowulf2005.iteye.com' target='_blank' title='beowulf2005'>beowulf2005</a> 2014-02-12 18:26  </h5>
+  <div>mark 1 xia</div>
+</div>
+<div id='nc133898'>
+  <h5>2 楼 <a href='http://edhn.iteye.com' target='_blank' title='edhn'>edhn</a> 2014-02-12 10:45  </h5>
+  <div> 高端了，顶一个</div>
+</div>
+<div id='nc133888'>
+  <h5>1 楼 <a href='http://night2007.iteye.com' target='_blank' title='night2007'>night2007</a> 2014-02-11 19:59  </h5>
+  <div><img src="/images/smiles/icon_idea.gif" /> </div>
+</div>
+
+    
+    
+  </div>
+  <div class="comments"><h3>发表评论</h3></div>
+  
+  <p style="text-align:center; margin-top:10px; margin-bottom:30px;"><a href="/login"> <img src="/images/login_icon.png" style="vertical-align:middle; margin-right: 10px;" /> 您还没有登录,请您登录后再发表评论 </a></p>
+
+</div>
+<script type="text/javascript">
+
+  function quote_comment(id) {
+    new Ajax.Request('/editor/quote', {
+      parameters: {'id':id, 'type':'NewsComment'},
+      onSuccess:function(response){
+        editor.bbcode_editor.textarea.insertAfterSelection(response.responseText);
+        Element.scrollTo(editor.bbcode_editor.textarea.element);}
+    });
+  }
+  
+  dp.SyntaxHighlighter.HighlightAll('code', true, true);
+  fix_image_size($$('div#news_content img'), 650);
+  fix_image_size($$('div.comments img'), 620);
+
+  new WeiboShare({share_buttons: $$('.share_weibo')[0], img_scope: $('news_content')});
+</script>
+
+
+
+        </div>
+        <div id="local">
+                      <div>
+  <form action="/news/search" method="get">    <input class="text" id="query" name="query" size="15" style="width: 135px;" type="text" />
+    <input class="submit" type="submit" value="搜索资讯" style="width: 68px;" />
+  </form></div>
+
+
+
+    
+        <div>
+  <h3>相关资讯 </h3>
+        <ul>
+                    <li><a href="/news/28698-8-jquery-and-css3-apps" target="_blank">8 款 jQuery/CSS3 前端插件</a></li>
+                    <li><a href="/news/23922" target="_blank">基于CSS3的表现层框架impress.js，让开发者轻松创建杀手级在线演示应用</a></li>
+                    <li><a href="/news/28752-Flappy-Bird-open-source" target="_blank">超火爆游戏Flappy Bird的开源替代品</a></li>
+              </ul>
+  </div>
+        <div>
+  <h3>相关讨论 </h3>
+        <ul>
+                    <li><a href="http://www.iteye.com/topic/1133113" target="_blank">Jquery导入Myeclipse10.1后报错解决思路</a></li>
+                    <li><a href="http://www.iteye.com/topic/1133907" target="_blank">html5 3d宽屏幻灯片代码</a></li>
+                    <li><a href="http://www.iteye.com/topic/1130950" target="_blank">HTML5+JS AUDIO 标签</a></li>
+                    <li><a href="http://www.iteye.com/topic/1136012" target="_blank">Android重量级--糗事百科客户端服务器全套源码</a></li>
+                    <li><a href="http://www.iteye.com/topic/1130791" target="_blank">HTML5+JS TD 持续更新</a></li>
+              </ul>
+  </div>
+        <div>
+  <h3>相关博客 </h3>
+        <ul>
+                    <li><a href="http://wallimn.iteye.com/blog/2008685" target="_blank">奥林匹克森林公园[201401]</a></li>
+                    <li><a href="http://wallimn.iteye.com/blog/2010738" target="_blank">动物园[201401]</a></li>
+                    <li><a href="http://wallimn.iteye.com/blog/2008599" target="_blank">豆豆游张北草原[201308]</a></li>
+                    <li><a href="http://dennis-lee-gammy.iteye.com/blog/2007632" target="_blank">HBase Memstore配置</a></li>
+                    <li><a href="http://rensanning.iteye.com/blog/2005508" target="_blank">Android UI滑动菜单之SlidingMenu</a></li>
+              </ul>
+  </div>
+    
+
+        </div>
+        <div id="nav">
+  <div class="wrapper">
+    <ul>
+            <li><a href="http://www.iteye.com/">首页</a></li>
+      <li><a href="http://www.iteye.com/news" class='selected'>资讯</a></li>
+      <li><a href="http://www.iteye.com/magazines">精华</a></li>
+      <li><a href="http://www.iteye.com/forums">论坛</a></li>
+      <li><a href="http://www.iteye.com/ask">问答</a></li>
+      <li><a href="http://www.iteye.com/blogs">博客</a></li>
+      <li><a href="http://www.iteye.com/blogs/subjects">专栏</a></li>
+      <li><a href="http://www.iteye.com/groups">群组</a></li>
+      <!-- <li><a target="_blank" href="http://job.iteye.com/iteye">招聘</a></li>-->
+      <li><a target="_blank" href="http://lib.csdn.net">知识库</a></li>
+      <li class="last"><a href="http://www.iteye.com/search">搜索</a></li>
+    </ul>
+  </div>
+</div>
+      </div>
+      <div id="footer">
+  <div id="site_nav">
+    <ul>
+      <li><a href="/index/service">广告服务</a></li>
+      <li><a href="http://webmaster.iteye.com">ITeye黑板报</a></li>
+      <li><a href="/index/contactus">联系我们</a></li>
+      <li class="last"><a href="/index/friend_links">友情链接</a></li>
+    </ul>
+  </div>
+  <div id="copyright">
+    &copy; 2003-2017 ITeye.com.    [ <a href="http://www.miibeian.gov.cn">京ICP证070598号</a>  京公网安备11010502027441 ]<br/>
+    北京创新乐知信息技术有限公司 版权所有<br />
+  </div>
+</div>
+    </div>
+    <script type="text/javascript">
+  document.write("<img src='http://stat.iteye.com/?url="+ encodeURIComponent(document.location.href) + "&referrer=" + encodeURIComponent(document.referrer) + "&user_id=' width='0' height='0' />");
+</script>
+
+<script src="http://csdnimg.cn/pubfooter/js/tracking.js?version=20130923164150" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      function json_digg(id) {
+        call_json_digg('digg', id)
+      };
+      function json_bury(id) {
+        call_json_digg('bury', id)
+      };
+      function disable_digg_link(id) {
+        $$('#digg_link_' + id + ' a.push_up').each(function(link) {
+            old_count = $('digg_count_' + id).textContent;
+            link.replace('<span class="push_up">顶 <b id="digg_count_' + id + '">' + old_count + '</b></span>')
+        });
+        $$('#digg_link_' + id + ' a.trample').each(function(link) {
+            old_count = $('bury_count_' + id).textContent;
+            link.replace('<span class="trample">踩 <b id="bury_count_' + id + '">' + old_count + '</b></span>')
+        });
+      };
+      function call_json_digg(type, id) {
+        if (type === 'bury' || type === 'digg') {
+          new Ajax.Request('/news/' + type,
+                           {
+                             method:'post',
+                             parameters: {"id": id, "format" : 'json' },
+                             onSuccess: function(transport) {
+                               disable_digg_link(id);
+                               var json = transport.responseText.evalJSON();
+                               $(type + "_count_" + id).update(json[type + '_count']);
+                             }
+                           });
+        }
+      };
+    </script>
+    
+    <script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/async_new.js"></script>
+<script src="http://c.csdnimg.cn/public/common/libs/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">var $csdn_iteye_jq = jQuery.noConflict();// 解决jq与prototype.js命名空间冲突的问题</script>
+<script src="http://ads.csdn.net/js/tracking.js" type="text/javascript"></script>
+  </body>
+</html>
